@@ -1,9 +1,10 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import '../style.css';
 
 const NavMenu = () => {
     return (
-        <Navbar expand="lg">
+        <Navbar expand="lg" style={{ backgroundColor: '#b4d0ff'}}>
             <Navbar.Brand href="/">
                 <img
                     src="/images/header.png"  

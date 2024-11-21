@@ -4,7 +4,15 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 const NavMenu = () => {
     return (
         <Navbar expand="lg">
-            <Navbar.Brand href="/">Pin The Place</Navbar.Brand>
+            <Navbar.Brand href="/">
+                <img
+                    src="/images/header.png"  
+                    width="auto"
+                    height="200"
+                    className="d-inline-block align-top"
+                    alt="Pin The Place logo"
+                />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

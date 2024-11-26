@@ -1,0 +1,17 @@
+2024-11-26 13:51:40.284 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-26 13:51:40.351 +01:00 [INF] Now listening on: https://localhost:7024
+2024-11-26 13:51:40.356 +01:00 [INF] Now listening on: http://localhost:5056
+2024-11-26 13:51:40.372 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-26 13:51:40.377 +01:00 [INF] Hosting environment: Development
+2024-11-26 13:51:40.379 +01:00 [INF] Content root path: C:\Users\there\Documents\GitHub\pintheplace_react\api
+2024-11-26 13:51:43.344 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/index.html - null null
+2024-11-26 13:51:43.425 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/index.html - 200 null text/html;charset=utf-8 82.5327ms
+2024-11-26 13:51:43.519 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - null null
+2024-11-26 13:51:43.595 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.6601ms
+2024-11-26 13:52:11.921 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/PinAPI/pinlist - null null
+2024-11-26 13:52:11.960 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-26 13:52:11.981 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-26 13:52:12.368 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-26 13:52:12.400 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 414.8072ms
+2024-11-26 13:52:12.400 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-26 13:52:12.403 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/PinAPI/pinlist - 200 null application/json; charset=utf-8 482.082ms

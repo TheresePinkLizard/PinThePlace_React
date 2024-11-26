@@ -13,6 +13,36 @@ using Microsoft.AspNetCore.Identity;
 
 namespace PinThePlace.Controllers;
 
+
+[ApiController]
+[Route("api/[controller]")]
+public class PinAPIController : Controller
+{
+    private readonly IPinRepository _pinRepository;
+    private readonly ILogger<PinController> _logger;
+
+    public PinAPIController(IPinRepository pinRepository, ILogger<PinController> logger)
+    {
+        _pinRepository = pinRepository;
+        _logger = logger;
+    }
+
+    [HttpGet("pinlist")]
+    public async Task<IActionResult> PinList()
+    {
+        var pins = await _pinRepository.GetAll();
+        if (pins == null)
+        {
+            _logger.LogError("[PinAPIController] Pin list not found while executing _pinRepository.GetAll()");
+            return NotFound("Pin list not found");
+        }
+       
+        return Ok(pins);
+    }
+
+}
+
+
 public class PinController : Controller
 {
 

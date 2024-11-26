@@ -9,6 +9,8 @@ using PinThePlace.ViewModels;
 using PinThePlace.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration.UserSecrets;
+using PinThePlace.DTOs;
 
 
 namespace PinThePlace.Controllers;
@@ -39,8 +41,21 @@ public class PinAPIController : Controller
             _logger.LogError("[PinAPIController] Pin list not found while executing _pinRepository.GetAll()");
             return NotFound("Pin list not found");
         }
-       
-        return Ok(pins);
+        var pinDtos = pins.Select(pin => new PinDto
+        {
+            PinId = pin.PinId,
+            Name = pin.Name,
+            Rating = pin.Rating,
+            Comment = pin.Comment,
+            ImageUrl = pin.ImageUrl,
+            Latitude = pin.Latitude,
+            Longitude = pin.Longitude,
+            DateCreated = pin.DateCreated,
+            UserName = pin.UserName,
+            UserId = pin.UserId
+        
+        });
+        return Ok(pinDtos);
     }
 
 }

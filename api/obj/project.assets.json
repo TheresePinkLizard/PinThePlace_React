@@ -7758,19 +7758,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\solve\\.nuget\\packages\\": {}
+    "C:\\Users\\there\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\solve\\VSprojects\\Webapplikasjoner\\PinThePlace_React\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\solve\\VSprojects\\Webapplikasjoner\\PinThePlace_React\\api\\api.csproj",
-      "packagesPath": "C:\\Users\\solve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\solve\\VSprojects\\Webapplikasjoner\\PinThePlace_React\\api\\obj\\",
+      "projectPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\there\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\solve\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\there\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

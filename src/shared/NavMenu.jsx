@@ -1,15 +1,15 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import '../style.css';
 
 const NavMenu = () => {
     return (
         <Navbar expand="lg" style={{ backgroundColor: '#b4d0ff'}}>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/Table">
                 <img
                     src="/images/header.png"  
                     width="auto"
-                    height="200"
+                    height="120"
                     className="d-inline-block align-top"
                     alt="Pin The Place logo"
                 />
@@ -17,19 +17,10 @@ const NavMenu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/Table">Home</Nav.Link>
                     <Nav.Link href="/pins">Pins</Nav.Link>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">
-                        Another Action
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                        </NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href="/HomePage">About</Nav.Link>
+                    
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

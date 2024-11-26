@@ -19,21 +19,29 @@ const UserListPage = () => {
 
     return (
         <Container>
-            <Row>
-                {userPins.map(pin => ( 
-                    <Col xs={12} key={pin.PinId}>  
-                        <Card style={{ marginBottom: '20px' }}>
-                            <Card.Img variant="top" src={pin.ImageUrl} alt={pin.Name} /> 
-                            <Card.Body>
-                                <Card.Title>{pin.Name}</Card.Title> 
-                                <Card.Text>Rating: {pin.Rating}</Card.Text> 
-                                <Card.Text>Comment: {pin.Comment}</Card.Text> 
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-        </Container>
+        <Row>
+            {userPins.map(pin => (
+                <Col xs={12} key={pin.PinId}>
+                    <Card style={{ marginBottom: '20px' }}>
+                        <Row className="no-gutters">
+                            <Col md={6}>
+                                <Card.Body>
+                                    <Card.Title>{pin.Name}</Card.Title>
+                                    <Card.Text>Rating: {pin.Rating}</Card.Text>
+                                    <Card.Text>Comment: {pin.Comment}</Card.Text>
+                                </Card.Body>
+                            </Col>
+                            <Col md={6}>
+                                <div className="image-container">
+                                    <Card.Img variant="top" src={pin.ImageUrl} alt={pin.Name} />
+                                </div>
+                            </Col>
+                        </Row>
+                    </Card>
+                </Col>
+            ))}
+        </Row>
+    </Container>
     );
 };
 

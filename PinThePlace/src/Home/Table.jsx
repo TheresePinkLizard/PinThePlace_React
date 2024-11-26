@@ -3,7 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import PinListPage from '../pins/PinListPage';
 import UserListPage from '../pins/UserListPage';
 
-const HomePage = () => {
+const Table = () => {
     const [content, setContent] = useState('Button 1');
 
     const handleButtonClick = (buttonName) => {
@@ -11,7 +11,7 @@ const HomePage = () => {
     };
 
     return (
-        <Container style={{ width: '1000px', height: '1000px' }}>
+        <Container style={{ width: '1500px', height: '1000px' }}>
             <div style={{ display: 'flex', width: '100%', height: 'auto' }}>
                 <div style={{ flex: '0 0 50%' }}>
                     <h3>Find your place</h3>
@@ -38,4 +38,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default Table;

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nBvZsOWmyrU=",
+  "dgSpecHash": "HLk6lHOXtvg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\there\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\there\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

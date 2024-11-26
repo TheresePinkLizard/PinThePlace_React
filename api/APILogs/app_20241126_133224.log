@@ -1,0 +1,28 @@
+2024-11-26 13:32:26.448 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-26 13:32:26.516 +01:00 [INF] Now listening on: https://localhost:7024
+2024-11-26 13:32:26.519 +01:00 [INF] Now listening on: http://localhost:5056
+2024-11-26 13:32:26.526 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-26 13:32:26.529 +01:00 [INF] Hosting environment: Development
+2024-11-26 13:32:26.531 +01:00 [INF] Content root path: C:\Users\there\Documents\GitHub\pintheplace_react\api
+2024-11-26 13:32:59.721 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/ - null null
+2024-11-26 13:32:59.751 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/ - 307 0 null 33.4051ms
+2024-11-26 13:35:31.716 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/ - null null
+2024-11-26 13:35:31.723 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/ - 307 0 null 7.0272ms
+2024-11-26 13:35:39.773 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/ - null null
+2024-11-26 13:35:39.775 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/ - 307 0 null 1.8493ms
+2024-11-26 13:36:06.999 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/index.html - null null
+2024-11-26 13:36:07.058 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/index.html - 200 null text/html;charset=utf-8 58.7673ms
+2024-11-26 13:36:07.089 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui.css - null null
+2024-11-26 13:36:07.092 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui-standalone-preset.js - null null
+2024-11-26 13:36:07.092 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui-bundle.js - null null
+2024-11-26 13:36:07.155 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-11-26 13:36:07.155 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-11-26 13:36:07.155 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-11-26 13:36:07.159 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 66.1739ms
+2024-11-26 13:36:07.159 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui.css - 200 143943 text/css 69.7999ms
+2024-11-26 13:36:07.159 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 66.1778ms
+2024-11-26 13:36:07.326 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - null null
+2024-11-26 13:36:07.442 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.8728ms
+2024-11-26 13:36:07.506 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/favicon-32x32.png - null null
+2024-11-26 13:36:07.507 +01:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-26 13:36:07.507 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/favicon-32x32.png - 200 628 image/png 1.5235ms

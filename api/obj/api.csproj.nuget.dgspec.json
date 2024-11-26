@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {}
+    "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {
+    "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+        "projectPath": "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\api.csproj",
         "packagesPath": "C:\\Users\\there\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\obj\\",
+        "outputPath": "C:\\Users\\there\\Documents\\GitHub\\pintheplace_react\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\there\\AppData\\Roaming\\NuGet\\NuGet.Config"

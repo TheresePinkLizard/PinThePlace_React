@@ -5,6 +5,7 @@ using Serilog.Events;
 using Microsoft.AspNetCore.Identity;
 using System.Globalization;
 using PinThePlace.Models;
+using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers().AddNewtonsoftJson(options => 
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
 });
 
 builder.Services.AddScoped<IPinRepository, PinRepository>();

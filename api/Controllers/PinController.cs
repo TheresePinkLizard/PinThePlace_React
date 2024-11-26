@@ -155,7 +155,7 @@ public class PinController : Controller
             if(file != null && file.Length >0)
             {
                 var fileName = Path.GetFileName(file.FileName);
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/images",fileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(),"/wwwroot/images",fileName);
 
                 using(var stream = System.IO.File.Create(filePath))
                 {

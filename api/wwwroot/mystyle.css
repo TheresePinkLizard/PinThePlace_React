@@ -1,0 +1,111 @@
+.img-header {
+    max-width: 100%;
+    height: 150px;
+    float: left;
+    margin-top: 50px;
+  }
+  .header{
+    background-color: #f7a17d;
+  }
+  body {
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
+  }
+  .footer{
+    background-color:#f7a17d;
+    height: 50px;
+    margin-top:auto;
+  }
+  .contentwindow{
+    height:600px;
+    overflow:scroll;
+    overflow-x:hidden;
+    /*border: 3px solid #feac93;*/
+    background-color: #ffdecf;
+    padding-top: 15px;
+  }
+  .contentwindow2{
+    height:600px;
+    overflow:scroll;
+    overflow-x:hidden;
+    /*border: 3px solid #69dd82;*/
+    background-color: #c5e5b6;
+    padding-top: 15px;
+  }
+  
+  /*style for feed button*/
+  .feedButton {
+    background-color:#ffddd3; 
+    border-color:#ffddd3;  
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none !important;
+    font-weight: bold;
+    color: #543617;
+  }
+  .feedButton:hover,
+  .feedButton:focus,
+  .feedButton:active {
+      background-color:#ffdecf; 
+      border-color:#ffdecf;  
+      outline: none;
+      box-shadow: none !important;
+  }
+
+  /*style for my pins button*/
+  .mypinsButton {
+    background-color: #deffcb; 
+     border-color:#deffcb; 
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none !important;
+    font-weight: bold;
+    color: #334e29;
+  }
+  .mypinsButton:hover,
+  .mypinsButton:focus,
+  .mypinsButton:active {
+      background-color: #c5e5b6; 
+      border-color:#c5e5b6;  
+      outline: none;
+      box-shadow: none !important;
+  }
+
+  /*style for add a pin button*/
+  .addpinButton {
+    background-color: #334e29; 
+     border-color:#334e29; 
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none !important;
+    font-weight: bold;
+    color: #deffcb;
+  }
+  .addpinButton:hover,
+  .addpinButton:focus,
+  .addpinButton:active {
+      background-color: #c5e5b6; 
+      border-color:#c5e5b6;  
+      outline: none;
+      box-shadow: none !important;
+  }
+
+ /*link styles*/
+  a{
+      color: #477d3b;
+      font-weight: bold;
+  }
+  a:hover{
+    color: #6cad5d;
+  }
+
+/*card styles*/
+  .card{
+    background-color: #ffdecf;
+    border: none !important;
+    font-family: verdana;
+  }
+  .active {
+    background-color: #fffaf8 !important;
+  }

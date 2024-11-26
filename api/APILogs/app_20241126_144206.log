@@ -1,0 +1,19 @@
+2024-11-26 14:42:08.047 +01:00 [INF] User profile is available. Using 'C:\Users\solve\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-26 14:42:08.132 +01:00 [INF] Now listening on: http://localhost:5056
+2024-11-26 14:42:08.138 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-26 14:42:08.142 +01:00 [INF] Hosting environment: Development
+2024-11-26 14:42:08.145 +01:00 [INF] Content root path: C:\Users\solve\VSprojects\Webapplikasjoner\PinThePlace_React\api
+2024-11-26 14:42:08.319 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/index.html - null null
+2024-11-26 14:42:08.353 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-11-26 14:42:08.415 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/index.html - 200 null text/html;charset=utf-8 97.6791ms
+2024-11-26 14:42:08.882 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - null null
+2024-11-26 14:42:08.889 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-11-26 14:42:08.964 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 82.9402ms
+2024-11-26 14:42:14.487 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/PinAPI/pinlist - null null
+2024-11-26 14:42:14.490 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-11-26 14:42:14.506 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-26 14:42:14.524 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-26 14:42:14.592 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-26 14:42:14.733 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 205.4544ms
+2024-11-26 14:42:14.733 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-26 14:42:14.738 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/PinAPI/pinlist - 200 5823 application/json; charset=utf-8 250.1497ms

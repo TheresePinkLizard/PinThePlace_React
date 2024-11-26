@@ -273,3 +273,6 @@ C:\Users\there\Documents\GitHub\pintheplace_react\api\obj\Debug\net8.0\refint\ap
 C:\Users\there\Documents\GitHub\pintheplace_react\api\obj\Debug\net8.0\api.pdb
 C:\Users\there\Documents\GitHub\pintheplace_react\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\there\Documents\GitHub\pintheplace_react\api\obj\Debug\net8.0\ref\api.dll
+C:\Users\there\Documents\GitHub\pintheplace_react\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\there\Documents\GitHub\pintheplace_react\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\there\Documents\GitHub\pintheplace_react\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using PinThePlace.DAL;
 using Serilog;
 using Serilog.Events;
+using Microsoft.AspNetCore.Identity;
+using System.Globalization;
+using PinThePlace.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedEmail = false;
+}).AddEntityFrameworkStores<PinDbContext>();
+
 builder.Services.AddDbContext<PinDbContext>(options => {
     options.UseSqlite(builder.Configuration["ConnectionStrings:PinDbContextConnection"]);});
+
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
@@ -20,6 +29,10 @@ builder.Services.AddCors(options =>
                 builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         });
 
+builder.Services.AddControllers().AddNewtonsoftJson(options => 
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
 
 builder.Services.AddScoped<IPinRepository, PinRepository>();
 

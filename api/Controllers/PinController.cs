@@ -19,11 +19,14 @@ namespace PinThePlace.Controllers;
 public class PinAPIController : Controller
 {
     private readonly IPinRepository _pinRepository;
+
+    private readonly UserManager <User> _userManager;
     private readonly ILogger<PinController> _logger;
 
-    public PinAPIController(IPinRepository pinRepository, ILogger<PinController> logger)
+    public PinAPIController(IPinRepository pinRepository, UserManager<User> userManager,  ILogger<PinController> logger)
     {
         _pinRepository = pinRepository;
+        _userManager = userManager;
         _logger = logger;
     }
 

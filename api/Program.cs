@@ -33,7 +33,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers().AddNewtonsoftJson(options => 
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+    //options.SerializerSettings.ContractResolver = new DefaultContractResolver();
 });
 
 builder.Services.AddScoped<IPinRepository, PinRepository>();

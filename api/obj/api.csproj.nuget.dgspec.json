@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {}
+    "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {
+    "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\there\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\there\\Documents\\GitHub\\PinThePlace_React\\api\\obj\\",
+        "projectPath": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\api.csproj",
+        "packagesPath": "C:\\Users\\inger\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\there\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\inger\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -119,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

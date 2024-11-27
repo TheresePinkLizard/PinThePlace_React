@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Card, Container, Row, Col, Table, Button, Form } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import { Card, Container, Row, Col, Table, Button, Form} from 'react-bootstrap';
 import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
 
@@ -68,6 +69,9 @@ const PinListPage: React.FC = () => {
                                     <Card.Text>Date: {new Date(pin.dateCreated).toString()}</Card.Text>
                                     <Card.Text>Comment: {pin.comment}</Card.Text>
                                     <Card.Text>UserName: {pin.userName}</Card.Text>
+                                    <div className="d-flex justify-content-between">
+                                        <Button href={`/pinupdate/${pin.pinId}`} variant="primary">Update</Button>
+                                    </div>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>

@@ -5,6 +5,7 @@ import PinListPage from './pins/PinListPage';
 import NavMenu from './shared/NavMenu';
 import Table from './Home/PinTable';
 import PinCreatePage from './pins/PinCreatePage';
+import PinUpdatePage from './pins/PinUpdatePage';
 
 // Code to call homepage: <HomePage/>
 const App: React.FC = () => {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             <Route path="/pins" element={<PinListPage />} />
             <Route path="/table" element={<Table />} /> 
             <Route path="/pincreate" element={<PinCreatePage />} /> 
+            <Route path="/pinupdate/:pinId" element={<PinUpdatePage/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
 
           </Routes>

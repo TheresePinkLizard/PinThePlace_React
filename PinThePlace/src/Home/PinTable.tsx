@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import {useNavigate} from 'react-router-dom';
 import PinListPage from '../pins/PinListPage';
 import UserListPage from '../pins/UserListPage';
 
 const PinTable: React.FC = () => {
+    const navigate = useNavigate();
     const [content, setContent] = useState('Button 1');
 
     const handleButtonClick = (buttonName) => {
         setContent(buttonName);
+    };
+
+    const navigateToLogin = () => {
+        navigate('/login');
     };
 
     return (
@@ -29,6 +35,13 @@ const PinTable: React.FC = () => {
                     <div id="favwindow" style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px' }}>
                         <UserListPage />
                     </div>
+
+                    <div>
+                    <h1>Here you can login</h1>
+                    <button onClick={navigateToLogin}>Login</button>
+                    </div>
+
+
                 </div>
             </div>
             <div style={{ backgroundColor: '#b4d0ff', height: '100px' }}>

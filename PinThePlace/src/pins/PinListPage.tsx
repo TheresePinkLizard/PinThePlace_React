@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { Card, Container, Row, Col, Table, Button } from 'react-bootstrap';
+import {Pin} from '../types/pin';
+import PinTable from '../Home/PinTable';
 
-const API_URL = 'http://localhost:5056'
+import API_URL from '../apiConfig';
 
-const PinListPage = () => {
+const PinListPage: React.FC = () => {
 
-        const [pins, setPins] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const [error, setError] = useState(null);
+        const [pins, setPins] = useState<Pin[]>([]);
+        const [loading, setLoading] = useState<boolean>(false);
+        const [error, setError] = useState<string | null>(null);
 
         const fetchPins = async () => {
             setLoading(true); // Set loading to true when starting the fetch
@@ -17,7 +19,7 @@ const PinListPage = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data = await response.json();
+            const data: Pin[] = await response.json();
             setPins(data);
             console.log(data);
             } catch (error) {
@@ -31,6 +33,38 @@ const PinListPage = () => {
             fetchPins();
         }, []);
     
+
+    
+    return (
+        <Container>
+        <Row>
+            {pins.map(pin => (
+                <Col xs={12} key={pin.pinId}>
+                    <Card style={{ marginBottom: '20px' }}>
+                        <Row className="no-gutters">
+                            <Col md={6}>
+                                <Card.Body>
+                                    <Card.Title>{pin.name}</Card.Title>
+                                    <Card.Text>Rating: {pin.rating}</Card.Text>
+                                    <Card.Text>Comment: {pin.comment}</Card.Text>
+                                </Card.Body>
+                            </Col>
+                            <Col md={6}>
+                                <div className="image-container">
+                                    <Card.Img variant="top" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Card>
+                </Col>
+            ))}
+        </Row>
+    </Container>
+    );
+};
+
+export default PinListPage;
+
     // Mock data
     /*const pins = [
         {
@@ -68,34 +102,3 @@ const PinListPage = () => {
         }
     ];
     */
-
-    
-    return (
-        <Container>
-        <Row>
-            {pins.map(pin => (
-                <Col xs={12} key={pin.PinId}>
-                    <Card style={{ marginBottom: '20px' }}>
-                        <Row className="no-gutters">
-                            <Col md={6}>
-                                <Card.Body>
-                                    <Card.Title>{pin.Name}</Card.Title>
-                                    <Card.Text>Rating: {pin.Rating}</Card.Text>
-                                    <Card.Text>Comment: {pin.Comment}</Card.Text>
-                                </Card.Body>
-                            </Col>
-                            <Col md={6}>
-                                <div className="image-container">
-                                    <Card.Img variant="top" src={`${API_URL}${pin.ImageUrl}`} alt={pin.Name}/>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
-    </Container>
-    );
-};
-
-export default PinListPage;

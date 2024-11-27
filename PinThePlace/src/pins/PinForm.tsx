@@ -8,22 +8,28 @@ import { Pin } from '../types/pin';
 interface PinFormProps {
   onPinChanged: (newPin: Pin) => void;
   pinId?: number;
+  isUpdate?: boolean;
+  initialData?: Pin;
 }
 
-const PinForm: React.FC<PinFormProps> = ({onPinChanged, pinId}) => {
-  const [name, setName] = useState<string>('');
-  const [rating, setRating] = useState<number>(1);
-  const [comment, setComment] = useState<string>('');
-  const [imageUrl, setImageUrl] = useState<string>('');
+const PinForm: React.FC<PinFormProps> = ({
+  onPinChanged,
+   pinId,
+   isUpdate=false,
+   initialData}) => {
+  const [name, setName] = useState<string> (initialData?.name || '');
+  const [rating, setRating] = useState<number>(initialData?.rating || 1);
+  const [comment, setComment] = useState<string>(initialData?.comment || '');
+  const [imageUrl, setImageUrl] = useState<string>(initialData?.imageUrl || '');
   const [uploadedImage, setUploadedImage] = useState<File>();
-  const [latitude, setLatitude] = useState<number>(0);
-  const [longitude, setLongitude] = useState<number>(0);
-  const [dateCreated, setDateCreated] = useState<Date>(new Date());
-  const [userId, setUserId] = useState<string>('');
-  const [userName, setUserName] = useState<string>('');
+  const [latitude, setLatitude] = useState<number>(initialData?.latitude || 0);
+  const [longitude, setLongitude] = useState<number>(initialData?.longitude || 0);
+  const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
+  const [userId, setUserId] = useState<string>(initialData?.userId || '');
+  const [userName, setUserName] = useState<string>(initialData?.userName || '');
 
 
-  const [error, setError] = useState<string | null>(null);
+  //const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const onCancel = () => {
@@ -123,7 +129,7 @@ const PinForm: React.FC<PinFormProps> = ({onPinChanged, pinId}) => {
         <Form.Label>Date Created</Form.Label>
         <Form.Control
           type="date"
-          value={dateCreated ? dateCreated.toISOString().substring(0, 10) : ''}
+          value={dateCreated instanceof Date ? dateCreated.toISOString().substring(0, 10) : ''}
           onChange={(e) => setDateCreated(e.target.value ? new Date(e.target.value) : null)}
         />
       </Form.Group>
@@ -151,9 +157,7 @@ const PinForm: React.FC<PinFormProps> = ({onPinChanged, pinId}) => {
 
 
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-
-      <Button variant="primary" type="submit">Create Pin!</Button>
+      <Button variant="primary" type="submit">{isUpdate ? 'Update Pin' : 'Create Pin!'}</Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>
     </Form>
   );

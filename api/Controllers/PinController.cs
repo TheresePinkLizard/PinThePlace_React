@@ -85,6 +85,66 @@ public class PinAPIController : Controller
         _logger.LogWarning("[PinAPIController] Pin creation failed {@pin}", newPin);
         return StatusCode(500, "Internal server error");
     }
+
+    [HttpGet("{id}")]
+
+    public async Task<IActionResult> GetPin(int id)
+    {
+        var pin = await _pinRepository.GetItemById(id);
+        if (pin == null)
+        {
+            _logger.LogError("[PinAPIController] Pin not found for PinId {PinId:0000}",id);
+            return NotFound("Pin not found");
+
+        }
+        return Ok(pin);
+    }
+
+    [HttpPut("update/{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] PinDto pinDto)
+    {
+        if (pinDto == null)
+        {
+            return BadRequest("Pin data cannot be null");
+        }
+        // Find the item in the database
+        var existingPin = await _pinRepository.GetItemById(id);
+        if (existingPin == null)
+        {
+            return NotFound("Pin not found");
+        }
+        // Update the item properties
+        existingPin.Name = pinDto.Name;
+        existingPin.Rating = pinDto.Rating;
+        existingPin.Comment = pinDto.Comment;
+        existingPin.ImageUrl = pinDto.ImageUrl;
+        existingPin.DateCreated = pinDto.DateCreated;
+        existingPin.Latitude = pinDto.Latitude;
+        existingPin.Longitude = pinDto.Longitude;
+        existingPin.UserId = pinDto.UserId;
+        existingPin.UserName = pinDto.UserName;
+        existingPin.UploadedImage = pinDto.UploadedImage;
+        
+        // Save the changes
+        bool updateSuccessful = await _pinRepository.Update(existingPin);
+        if (updateSuccessful)
+        {
+            return Ok(existingPin); // Return the updated item
+        }
+
+        _logger.LogWarning("[PinAPIController] Pin update failed {@pin}", existingPin);
+        return StatusCode(500, "Internal server error");
+    }
+
+
+
+
+
+
+
+
+
+
 }
 
 

@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { Card, Container, Row, Col, Table, Button } from 'react-bootstrap';
+import {User} from '../types/user';
+import {Pin} from '../types/pin';
 
-const API_URL = 'http://localhost:5056'
+import API_URL from '../apiConfig';
 
-const UserListPage = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+const UserListPage: React.FC = () => {
+    const [users, setUsers] = useState<User[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
 
     const fetchUsers = async () => {
         setLoading(true); // Set loading to true when starting the fetch
@@ -16,7 +18,7 @@ const UserListPage = () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data = await response.json();
+            const data: User[] = await response.json();
             setUsers(data);
             console.log(data);
         } catch (error) {
@@ -44,11 +46,11 @@ const UserListPage = () => {
                     </thead>
                     <tbody>
                         {users.map(user => (
-                            <tr key={user.UserId}>
-                                <td>{user.UserId}</td>
-                                <td>{user.UserName}</td>
-                                <td>{user.Email}</td>
-                                <td>{user.Pins && user.Pins.map(pin => `Pin${pin.PinId}`).join(', ')}</td>
+                            <tr key={user.userId}>
+                                <td>{user.userId}</td>
+                                <td>{user.userName}</td>
+                                <td>{user.email}</td>
+                                <td>{user.pins && user.pins.map(pin => `Pin${pin.pinId}`).join(', ')}</td>
                             </tr>
                         ))}
                     </tbody>

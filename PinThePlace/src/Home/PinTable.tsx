@@ -3,7 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import PinListPage from '../pins/PinListPage';
 import UserListPage from '../pins/UserListPage';
 
-const Table = () => {
+const PinTable: React.FC = () => {
     const [content, setContent] = useState('Button 1');
 
     const handleButtonClick = (buttonName) => {
@@ -38,4 +38,4 @@ const Table = () => {
     );
 };
 
-export default Table;
+export default PinTable;

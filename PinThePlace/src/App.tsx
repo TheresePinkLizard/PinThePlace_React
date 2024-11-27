@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import HomePage from './Home/HomePage';
 import PinListPage from './pins/PinListPage';
 import NavMenu from './shared/NavMenu';
-import Table from './Home/Table';
+import Table from './Home/PinTable';
 
 // Code to call homepage: <HomePage/>
-function App() {
+const App: React.FC = () => {
   return (
    <Container>
     <NavMenu />
@@ -20,6 +20,6 @@ function App() {
         </Router>
     </Container>
   );
-}
+};
 
 export default App;

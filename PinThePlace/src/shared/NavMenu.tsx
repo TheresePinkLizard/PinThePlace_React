@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import '../style.css';
 
-const NavMenu = () => {
+const NavMenu: React.FC = () => {
     return (
         <Navbar expand="lg" style={{ backgroundColor: '#b4d0ff'}}>
             <Navbar.Brand href="/Table">

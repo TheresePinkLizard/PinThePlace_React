@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import { Card, Container, Row, Col, Table, Button, Form} from 'react-bootstrap';
 import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
-
 import API_URL from '../apiConfig';
 
 const PinListPage: React.FC = () => {
@@ -34,6 +33,23 @@ const PinListPage: React.FC = () => {
         useEffect(() => {
             fetchPins();
         }, []);
+
+        const handlePinDeleted = async(pinId: number) => {
+            const confirmDelete = window.confirm(`Are you sure you want to delete the pin ${pinId}?`);
+            if (confirmDelete) {
+              try {
+                const response = await fetch(`${API_URL}/api/pinapi/delete/${pinId}`, {
+                  method: 'DELETE',
+                });
+                setPins(prevPins => prevPins.filter(pin => pin.pinId !== pinId));
+                console.log('Pin deleted:', pinId);
+              } catch (error) {
+                console.error('Error deleting pin:', error);
+                setError('Failed to delete pin.');
+              }
+            }
+          }; 
+        
 
         const filteredPins = searchQuery
         ? pins.filter(pin =>
@@ -71,6 +87,9 @@ const PinListPage: React.FC = () => {
                                     <Card.Text>UserName: {pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
                                         <Button href={`/pinupdate/${pin.pinId}`} variant="primary">Update</Button>
+                                    </div>
+                                    <div className="d-flex justify-content-between">
+                                        <Button variant="primary" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
                                     </div>
                                 </Card.Body>
                             </Col>

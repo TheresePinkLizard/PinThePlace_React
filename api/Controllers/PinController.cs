@@ -136,6 +136,20 @@ public class PinAPIController : Controller
         return StatusCode(500, "Internal server error");
     }
 
+    [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        bool returnOk = await _pinRepository.Delete(id);
+        if (!returnOk)
+        {
+            _logger.LogError("[PinAPIController] pin deletion failed for the PinId {PinId:0000}", id);
+            return BadRequest("Pin deletion failed");
+        }
+        return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
+    } 
+
+
+
 
 
 

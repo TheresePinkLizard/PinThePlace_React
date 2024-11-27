@@ -65,7 +65,9 @@ const PinListPage: React.FC = () => {
                                 <Card.Body>
                                     <Card.Title>{pin.name}</Card.Title>
                                     <Card.Text>Rating: {pin.rating}</Card.Text>
+                                    <Card.Text>Date: {new Date(pin.dateCreated).toString()}</Card.Text>
                                     <Card.Text>Comment: {pin.comment}</Card.Text>
+                                    <Card.Text>UserName: {pin.userName}</Card.Text>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>

@@ -16,7 +16,7 @@ const PinTable: React.FC = () => {
                 <div style={{ flex: '0 0 50%' }}>
                     <h3>Find your place</h3>
                     <div id="map" style={{ height: '500px', width: '100%' }}></div>
-                    <Button variant="secondary" onClick={() => handleButtonClick('Add a pin')}>Add a pin</Button>
+                    <Button href='pincreate' className = "btn btn-secondary mt-3">Add a pin</Button>
                 </div>
                 <div style={{ flex: '1' }}>
                     <div style={{ display: 'flex', flexDirection: 'row' }}>

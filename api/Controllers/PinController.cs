@@ -58,7 +58,35 @@ public class PinAPIController : Controller
         return Ok(pinDtos);
     }
 
+[HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] PinDto pinDto)
+    {
+        if (pinDto == null)
+        {
+            return BadRequest("Pin cannot be null");
+        }
+        var newPin = new Pin
+        {
+            Name = pinDto.Name,
+            Rating = pinDto.Rating,
+            Comment = pinDto.Comment,
+            ImageUrl = pinDto.ImageUrl,
+            Latitude = pinDto.Latitude,
+            Longitude = pinDto.Longitude,
+            UploadedImage = pinDto.UploadedImage,
+            DateCreated = pinDto.DateCreated,
+            UserId = pinDto.UserId,
+            UserName = pinDto.UserName
+        };        
+        bool returnOk = await _pinRepository.Create(newPin);
+        if (returnOk)
+            return CreatedAtAction(nameof(PinList), new { id = newPin.PinId }, newPin);
+
+        _logger.LogWarning("[PinAPIController] Pin creation failed {@pin}", newPin);
+        return StatusCode(500, "Internal server error");
+    }
 }
+
 
 
 public class PinController : Controller

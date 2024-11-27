@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Card, Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Card, Container, Row, Col, Table, Button, Form } from 'react-bootstrap';
 import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
 
@@ -10,6 +10,7 @@ const PinListPage: React.FC = () => {
         const [pins, setPins] = useState<Pin[]>([]);
         const [loading, setLoading] = useState<boolean>(false);
         const [error, setError] = useState<string | null>(null);
+        const [searchQuery, setSearchQuery] = useState('');
 
         const fetchPins = async () => {
             setLoading(true); // Set loading to true when starting the fetch
@@ -32,13 +33,31 @@ const PinListPage: React.FC = () => {
         useEffect(() => {
             fetchPins();
         }, []);
-    
 
-    
+        const filteredPins = searchQuery
+        ? pins.filter(pin =>
+            pin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            pin.rating.toString().includes(searchQuery) ||
+            pin.userName.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        : pins;
+
+
     return (
         <Container>
+             <Form.Group className="mb-4">
+                <Form.Control
+                    type="text"
+                    placeholder="Search pins by name, rating, or username..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </Form.Group>
+            {loading && <p>Loading...</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {!loading && !error && filteredPins.length === 0 && <p>No pins match your search criteria.</p>}
         <Row>
-            {pins.map(pin => (
+            {filteredPins.map(pin => (
                 <Col xs={12} key={pin.pinId}>
                     <Card style={{ marginBottom: '20px' }}>
                         <Row className="no-gutters">

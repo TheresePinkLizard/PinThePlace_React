@@ -4,12 +4,12 @@ import '../style.css';
 
 const NavMenu: React.FC = () => {
     return (
-        <Navbar expand="lg" style={{ backgroundColor: '#b4d0ff'}}>
+        <Navbar expand="lg" className='header'>
             <Navbar.Brand href="/Table">
                 <img
                     src="/images/header.png"  
                     width="auto"
-                    height="120"
+                    height="180"
                     className="d-inline-block align-top"
                     alt="Pin The Place logo"
                 />

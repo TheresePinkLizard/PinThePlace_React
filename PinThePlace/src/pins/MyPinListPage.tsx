@@ -20,7 +20,7 @@ const PinListPage: React.FC = () => {
     const username = sessionStorage.getItem('username');
 
     const fetchPins = async () => {
-        if(!username) return <p>Please log in to view your pins.</p>;; //Checks if user is logged in
+        if(!username) return;
         setLoading(true); // Set loading to true when starting the fetch
         setError(null);   // Clear any previous errors
         try {
@@ -64,6 +64,14 @@ const PinListPage: React.FC = () => {
               pin.userName.toLowerCase().includes(searchQuery.toLowerCase())
           )
         : userPins;
+        
+    if (!username) {
+        return (
+            <Container>
+                <p>Please log in to view your pins.</p>
+                </Container>
+            );
+        }
 
     return (
         <Container>

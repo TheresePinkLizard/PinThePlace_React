@@ -47,7 +47,7 @@
     border-bottom-right-radius: 0;
     box-shadow: none !important;
     font-weight: bold;
-    color: #6c4722;
+    color: #6c4722!important;
   }
   .feedButton:hover{
     color: #b07439;
@@ -58,7 +58,7 @@
       border-color:#ffdecf;  
       outline: none;
       box-shadow: none !important;
-      color: #6c4722;
+      color: #6c4722!important;
   }
 
   /*style for my pins button*/
@@ -69,7 +69,7 @@
     border-bottom-right-radius: 0;
     box-shadow: none !important;
     font-weight: bold;
-    color: #37522e;
+    color: #37522e!important;;
   }
   .mypinsButton:hover
   {
@@ -81,7 +81,7 @@
       border-color:#c5e5b6;  
       outline: none;
       box-shadow: none !important;
-      color: #37522e;
+      color: #37522e!important;;
   }
 
   /*style for add a pin button*/
@@ -97,7 +97,7 @@
   .addpinButton:hover,
   .addpinButton:focus,
   .addpinButton:active {
-      background-color: #c5e5b6; 
+      background-color: #90b87d; 
       border-color:#c5e5b6;  
       outline: none;
       box-shadow: none !important;
@@ -134,7 +134,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;

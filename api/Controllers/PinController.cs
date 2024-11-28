@@ -147,18 +147,6 @@ public class PinAPIController : Controller
         }
         return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
     } 
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 

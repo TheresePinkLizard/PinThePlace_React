@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import PinListPage from '../pins/PinListPage';
-import UserListPage from '../pins/UserListPage';
+import MyPinListPage from '../pins/MyPinListPage';
 
 const PinTable: React.FC = () => {
     const [content, setContent] = useState('Button 1');
@@ -27,7 +27,7 @@ const PinTable: React.FC = () => {
                         <PinListPage />
                     </div>
                     <div id="favwindow" style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px' }}>
-                        <UserListPage />
+                        <MyPinListPage />
                     </div>
                 </div>
             </div>

@@ -10,6 +10,41 @@ using PinThePlace.DAL;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
+namespace PinThePlace.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+
+public class FavoriteAPIController : Controller
+{
+    private readonly IPinRepository _pinRepository;
+    private readonly ILogger<FavoriteController> _logger;
+    private readonly UserManager<User> _userManager;
+
+    public FavoriteAPIController (IPinRepository pinRepository, ILogger<FavoriteController> logger,UserManager<User> userManager)
+    {
+        _pinRepository = pinRepository;
+        _logger = logger;
+        _userManager = userManager;
+    }
+
+    [HttpGet("favoritelist")]
+    public async Task<IActionResult> FavoriteList()
+    {
+        var favorites = await _pinRepository.GetAllFavorites();
+        if (favorites == null)
+        {
+            _logger.LogError("[FavoriteAPIController] Favorite list not found");
+            return NotFound("Favorites not found");
+        }
+        return Ok(favorites);
+    }
+
+}
+
+
+
+
 public class FavoriteController : Controller
 {
     private readonly IPinRepository _pinRepository; // deklarerer en privat kun lesbar felt for å lagre instanser av ItemDbContext

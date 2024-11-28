@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Container } from 'react-bootstrap';
-import L from 'leaflet';
-import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-import 'leaflet/dist/leaflet.css';
+//import L from 'leaflet';
+//import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+//import 'leaflet/dist/leaflet.css';
 import PinListPage from '../pins/PinListPage';
 import UserListPage from '../pins/UserListPage';
 import '../style.css';
 import MyPinListPage from '../pins/MyPinListPage';
 
+// to be able to use map without installing, these need to be declaired 
+declare let L;
+declare let GeoSearchControl;
+declare let OpenStreetMapProvider;
 
 const PinTable: React.FC = () => {
   const [content, setContent] = useState('Button 1');

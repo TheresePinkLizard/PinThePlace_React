@@ -10,20 +10,22 @@ interface PinFormProps {
   pinId?: number;
   isUpdate?: boolean;
   initialData?: Pin;
+  latLong?: { lat: number, long: number }; // adding latitude longitude
 }
 
 const PinForm: React.FC<PinFormProps> = ({
   onPinChanged,
    pinId,
    isUpdate=false,
-   initialData}) => {
+   initialData,
+   latLong}) => {
   const [name, setName] = useState<string> (initialData?.name || '');
   const [rating, setRating] = useState<number>(initialData?.rating || 1);
   const [comment, setComment] = useState<string>(initialData?.comment || '');
   const [imageUrl, setImageUrl] = useState<string>(initialData?.imageUrl || '');
   const [uploadedImage, setUploadedImage] = useState<File>();
-  const [latitude, setLatitude] = useState<number>(initialData?.latitude || 0);
-  const [longitude, setLongitude] = useState<number>(initialData?.longitude || 0);
+  const [latitude, setLatitude] = useState<number>(latLong?.lat || 0); // give latlong datatype to store location
+  const [longitude, setLongitude] = useState<number>(latLong?.long || 0);
   const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
   const [userId, setUserId] = useState<string>(initialData?.userId || '');
   const [userName, setUserName] = useState<string>(initialData?.userName || '');

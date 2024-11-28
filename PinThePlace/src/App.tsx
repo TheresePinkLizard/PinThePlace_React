@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/pins" element={<PinListPage />} />
+            <Route path="/pins" element={<PinListPage onCardClick={() => {}} />} />
             <Route path="/table" element={<Table />} /> 
             <Route path="/pincreate" element={<PinCreatePage />} /> 
             <Route path="/pinupdate/:pinId" element={<PinUpdatePage/>}/>

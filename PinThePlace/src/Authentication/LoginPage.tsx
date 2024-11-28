@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate} from 'react-router-dom';
 import API_URL from '../apiConfig';
 
+import * as LoginService from './LoginService';
+
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
-    const response = await fetch(`${API_URL}/Account/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    });
-
-    if (response.ok) {
-      // Handle successful login
-      const { token } = await response.json();
-      localStorage.setItem('userToken', token);
-    } else {
-      // Handle error during login
+    
+    try {
+      const token = await LoginService.fetchLogin(username,password);
+      sessionStorage.setItem('userToken',token);
+      sessionStorage.setItem('username',username);
+      navigate(-1);
+    } catch (error) {
+      console.error("Det funka kje", error);
     }
   };
 

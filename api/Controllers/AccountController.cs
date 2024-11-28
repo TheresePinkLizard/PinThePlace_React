@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using System.Security.Claims; 
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace PinThePlace.Controllers;
 
@@ -41,15 +44,21 @@ public class AccountController : ControllerBase
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
-        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-        var principal = new ClaimsPrincipal(identity);
-        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super_long_and_super_secure_secret_key_26143526143514352134621321313524362145"));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        return Ok();
+        var token = new JwtSecurityToken(
+            issuer: "pintheplace.com",
+            audience: "pintheplace.com",
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(30),
+            signingCredentials: creds);
+
+        return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
     }
     else
     {
-        _logger.LogError("[UserController] Login failed for the user {UserName}", model.UserName);
+        _logger.LogError("[AccountController] Login failed for the user {UserName}", model.UserName);
         return BadRequest("Username or password is incorrect.");
         }
     }

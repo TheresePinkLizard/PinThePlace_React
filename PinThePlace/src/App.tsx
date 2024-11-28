@@ -7,6 +7,7 @@ import Table from './Home/PinTable';
 import PinCreatePage from './pins/PinCreatePage';
 import PinUpdatePage from './pins/PinUpdatePage';
 import LoginPage from './Authentication/LoginPage';
+import Logout from './Authentication/LogoutPage';
 
 // Code to call homepage: <HomePage/>
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/pincreate" element={<PinCreatePage />} /> 
             <Route path="/pinupdate/:pinId" element={<PinUpdatePage/>}/>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="*" element={<Navigate to="/" replace />} />
 
           </Routes>

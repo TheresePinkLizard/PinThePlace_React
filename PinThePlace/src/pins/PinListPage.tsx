@@ -8,6 +8,7 @@ import API_URL from '../apiConfig';
 import * as PinService from './PinService';
 
 const PinListPage: React.FC = () => {
+    const username = sessionStorage.getItem('username');
 
         const [pins, setPins] = useState<Pin[]>([]);
         const [loading, setLoading] = useState<boolean>(false);
@@ -58,6 +59,7 @@ const PinListPage: React.FC = () => {
 
     return (
         <Container>
+            {username && <div>Logged in as: {username}</div>}
              <Form.Group className="mb-4">
                 <Form.Control
                     type="text"

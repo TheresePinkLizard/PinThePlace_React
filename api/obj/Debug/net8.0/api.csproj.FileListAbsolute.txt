@@ -832,3 +832,8 @@ C:\Users\inger\Documents\GitHub\PinThePlace_React\api\obj\Debug\net8.0\refint\ap
 C:\Users\inger\Documents\GitHub\PinThePlace_React\api\obj\Debug\net8.0\api.pdb
 C:\Users\inger\Documents\GitHub\PinThePlace_React\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 C:\Users\inger\Documents\GitHub\PinThePlace_React\api\obj\Debug\net8.0\ref\api.dll
+C:\Users\inger\Documents\GitHub\PinThePlace_React\api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\inger\Documents\GitHub\PinThePlace_React\api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\inger\Documents\GitHub\PinThePlace_React\api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\inger\Documents\GitHub\PinThePlace_React\api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\inger\Documents\GitHub\PinThePlace_React\api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

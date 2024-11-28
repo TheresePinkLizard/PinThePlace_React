@@ -14,10 +14,10 @@
   }
   .footer{
     background-color:#f7a17d;
-    height: 50px;
+    height: 100px;
     margin-top:auto;
   }
-  
+  /*Feed window*/
   .contentwindow{
     height: 600px;
     overflow: scroll;
@@ -25,9 +25,9 @@
     background-color: #ffdecf;
     padding-top: 15px;
     display: none; 
-    width: 500px;
+    width: 100%;
 }
-
+/*Mypins window*/
   .contentwindow2 {
     display: block; 
     height:600px;
@@ -35,7 +35,7 @@
     overflow-x:hidden;
     background-color: #c5e5b6;
     padding-top: 15px;
-    width: 500px;
+    width: 100%;
   }
  
   
@@ -47,7 +47,7 @@
     border-bottom-right-radius: 0;
     box-shadow: none !important;
     font-weight: bold;
-    color: #6c4722;
+    color: #6c4722!important;
   }
   .feedButton:hover{
     color: #b07439;
@@ -58,7 +58,7 @@
       border-color:#ffdecf;  
       outline: none;
       box-shadow: none !important;
-      color: #6c4722;
+      color: #6c4722!important;
   }
 
   /*style for my pins button*/
@@ -69,7 +69,7 @@
     border-bottom-right-radius: 0;
     box-shadow: none !important;
     font-weight: bold;
-    color: #37522e;
+    color: #37522e!important;;
   }
   .mypinsButton:hover
   {
@@ -81,7 +81,7 @@
       border-color:#c5e5b6;  
       outline: none;
       box-shadow: none !important;
-      color: #37522e;
+      color: #37522e!important;;
   }
 
   /*style for add a pin button*/
@@ -97,7 +97,7 @@
   .addpinButton:hover,
   .addpinButton:focus,
   .addpinButton:active {
-      background-color: #c5e5b6; 
+      background-color: #90b87d; 
       border-color:#c5e5b6;  
       outline: none;
       box-shadow: none !important;
@@ -113,11 +113,34 @@
   }
 
 /*card styles*/
-  .card{
-    background-color: #ffdecf;
-    border: none !important;
-    font-family: verdana;
-  }
+.card{
+  background-color: #ffdecf;
+  border: none !important;
+  font-family: verdana;
+  width: 100%;
+  margin: 0 auto;
+  font-size: small;
+}
+
+/*card image*/
+.image-container {
+  width: 100%;
+  height: 100%; /* Make sure the container takes the full height */
+  position: relative; /* This is needed to position the image absolutely within the container */
+  overflow: hidden; /* Hide the parts of the image that exceed the container */
+}
+
+.image-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+}
+
   .active {
     background-color: #fffaf8 !important;
   }

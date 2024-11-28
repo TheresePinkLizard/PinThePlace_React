@@ -13,7 +13,7 @@ import MyPinListPage from '../pins/MyPinListPage';
 const PinTable: React.FC = () => {
     const navigate = useNavigate();
     const [content, setContent] = useState('Button 1');
-  const [content, setContent] = useState('Button 1');
+    //const [content, setContent] = useState('Button 1');
 
   const handleButtonClick = (buttonName) => {
     setContent(buttonName);

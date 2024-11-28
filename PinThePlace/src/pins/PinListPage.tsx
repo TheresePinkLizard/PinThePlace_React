@@ -5,6 +5,8 @@ import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
 import API_URL from '../apiConfig';
 
+import * as PinService from './PinService';
+
 const PinListPage: React.FC = () => {
 
         const [pins, setPins] = useState<Pin[]>([]);
@@ -16,11 +18,7 @@ const PinListPage: React.FC = () => {
             setLoading(true); // Set loading to true when starting the fetch
             setError(null);   // Clear any previous errors
         try {
-            const response = await fetch(`${API_URL}/api/pinapi/pinlist`); 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data: Pin[] = await response.json();
+            const data = await PinService.fetchPins();
             setPins(data);
             console.log(data);
             } catch (error) {
@@ -38,9 +36,7 @@ const PinListPage: React.FC = () => {
             const confirmDelete = window.confirm(`Are you sure you want to delete the pin ${pinId}?`);
             if (confirmDelete) {
               try {
-                const response = await fetch(`${API_URL}/api/pinapi/delete/${pinId}`, {
-                  method: 'DELETE',
-                });
+                await PinService.deletePin(pinId);
                 setPins(prevPins => prevPins.filter(pin => pin.pinId !== pinId));
                 console.log('Pin deleted:', pinId);
               } catch (error) {

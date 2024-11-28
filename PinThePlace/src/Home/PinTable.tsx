@@ -4,8 +4,9 @@ import L from 'leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import 'leaflet/dist/leaflet.css';
 import PinListPage from '../pins/PinListPage';
-import UserListPage from '../pins/UserListPage';
 import '../style.css';
+import MyPinListPage from '../pins/MyPinListPage';
+
 
 const PinTable: React.FC = () => {
   const [content, setContent] = useState('Button 1');
@@ -56,7 +57,6 @@ const PinTable: React.FC = () => {
                     <div id="feedwindow" className='contentwindow' style={{ display: content === 'Button 1' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px'}}>
                         <PinListPage />
                     </div>
-
                     <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px' }}>
                         <UserListPage />
                     </div>

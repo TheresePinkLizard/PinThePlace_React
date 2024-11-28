@@ -4,6 +4,8 @@ import PinForm from './PinForm';
 import {Pin} from '../types/pin';
 import API_URL from '../apiConfig';
 
+import * as PinService from './PinService';
+
 
 const PinUpdatePage: React.FC = () => {
     const {pinId} = useParams<{pinId: string}>();
@@ -15,11 +17,7 @@ const PinUpdatePage: React.FC = () => {
     useEffect(() => {
         const fetchPin = async () => {
           try {
-            const response = await fetch(`${API_URL}/api/pinapi/${pinId}`); // default Get
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
+            const data = await PinService.fetchPinById(pinId);
             setPin(data);
           } catch (error) {
             setError('Failed to fetch item');
@@ -35,17 +33,7 @@ const PinUpdatePage: React.FC = () => {
     const handlePinUpdated = async (pin: Pin) => {
 
         try {
-          const response = await fetch(`${API_URL}/api/pinapi/update/${pin.pinId}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(pin),
-          });
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
+          const data = await PinService.updatePin(pin.pinId, pin);
           console.log('Item updated successfully:', data);
           navigate('/items'); // Navigate back after successful creation
         } catch (error) {

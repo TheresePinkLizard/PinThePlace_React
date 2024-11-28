@@ -1,13 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
-import L from 'leaflet';
-import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-import 'leaflet/dist/leaflet.css';
+//import L from 'leaflet';
+//import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+//import 'leaflet/dist/leaflet.css';
 import PinListPage from '../pins/PinListPage';
 import UserListPage from '../pins/PinListPage';
 import '../style.css';
 import MyPinListPage from '../pins/MyPinListPage';
+
+declare global {
+  interface Window {L: any; GeoSearch: any;}
+}
+const {GeoSearchControl, OpenStreetMapProvider} = window.GeoSearch; 
+const L : any = window.L;
 
 
 const PinTable: React.FC = () => {
@@ -37,6 +43,7 @@ const PinTable: React.FC = () => {
       attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    
     const provider = new OpenStreetMapProvider();
     
     const searchControl = (GeoSearchControl as any)({

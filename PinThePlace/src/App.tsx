@@ -6,6 +6,7 @@ import NavMenu from './shared/NavMenu';
 import Table from './Home/PinTable';
 import PinCreatePage from './pins/PinCreatePage';
 import PinUpdatePage from './pins/PinUpdatePage';
+import UserListPage from './pins/UserListPage';
 import LoginPage from './Authentication/LoginPage';
 import Logout from './Authentication/LogoutPage';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/pins" element={<PinListPage onCardClick={() => {}} />} />
             <Route path="/table" element={<Table />} /> 
+            <Route path="/users" element={<UserListPage/>} /> 
             <Route path="/pincreate" element={<PinCreatePage />} /> 
             <Route path="/pinupdate/:pinId" element={<PinUpdatePage/>}/>
             <Route path="/login" element={<LoginPage />} />

@@ -154,7 +154,7 @@ const PinTable: React.FC = () => {
                         <PinListPage onCardClick={handleCardClick}/>
                     </div>
                     <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
-                        <UserListPage/>
+                        <MyPinListPage/>
                     </div>
 
                     <div>

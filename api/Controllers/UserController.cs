@@ -29,7 +29,8 @@ public class UserAPIController : Controller
     public async Task<IActionResult> UserList()
     {
         try{
-        List<User> users = await _pinDbContext.Users.ToListAsync();
+        var users = await _pinDbContext.Users.Include(u => u.Pins) // Inkluder relasjonen til Pins
+            .ToListAsync();
 
         var userName = _userManager.GetUserName(User);
         
@@ -41,10 +42,14 @@ public class UserAPIController : Controller
             // Map brukere til DTO-er
             var userDtos = users.Select(user => new UserDto
             {
-                UserName = user.UserName,
-                Email = user.Email
-
-            }).ToList();
+            UserId = user.Id,
+            UserName = user.UserName,
+            Email = user.Email,
+            Pins = user.Pins?.Select(pin => new PinDto
+            {
+                PinId = pin.PinId
+            }).ToList()
+        }).ToList();
             return Ok(userDtos);
         }
         }

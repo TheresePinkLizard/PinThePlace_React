@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav, Navbar, Button } from 'react-bootstrap';
 import '../style.css';
 
 
 const NavMenu: React.FC = () => {
-    const username = sessionStorage.getItem('username');
+
+    const [username, setUsername] = useState<string | null>(null);
+    useEffect(() => {
+        // Hent brukernavnet fra sessionStorage
+        const storedUsername = sessionStorage.getItem('username');
+        setUsername(storedUsername);
+      }, []);
 
     return (
         <Navbar expand="lg" className='header'>
@@ -22,8 +28,7 @@ const NavMenu: React.FC = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/Table">Home</Nav.Link>
                     <Nav.Link href="/pins">Pins</Nav.Link>
-                    <Nav.Link href="/users">Users</Nav.Link>
-                    <Nav.Link href="/pins/">Pins</Nav.Link>
+                    {username === 'Admin' && <Nav.Link href="/users">Users</Nav.Link>} {/* Kun for Admin */}
                     <Nav.Link href="/HomePage">About</Nav.Link>
                     {username && <Nav.Link href="/logout">Logout</Nav.Link>}
 

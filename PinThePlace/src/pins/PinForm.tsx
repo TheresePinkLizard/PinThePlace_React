@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { Pin } from '../types/pin';
@@ -26,6 +26,12 @@ const PinForm: React.FC<PinFormProps> = ({
   const [uploadedImage, setUploadedImage] = useState<File>();
   const [latitude, setLatitude] = useState<number>(latLong?.lat || 0); // give latlong datatype to store location
   const [longitude, setLongitude] = useState<number>(latLong?.long || 0);
+  useEffect(() => {
+    if (initialData) {
+      setLatitude(initialData.latitude || 0);
+      setLongitude(initialData.longitude || 0);
+    }
+  }, [initialData]);
   const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
   const [userId, setUserId] = useState<string>(initialData?.userId || '');
   const [userName, setUserName] = useState<string>(initialData?.userName || '');

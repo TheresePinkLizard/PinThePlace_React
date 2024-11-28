@@ -4,6 +4,7 @@ import { Card, Container, Row, Col, Table, Button, Form} from 'react-bootstrap';
 import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
 import API_URL from '../apiConfig';
+import { useLocation } from 'react-router-dom';
 
 import * as PinService from './PinService';
 
@@ -18,6 +19,10 @@ type PinListPageProps = {
         const [loading, setLoading] = useState<boolean>(false);
         const [error, setError] = useState<string | null>(null);
         const [searchQuery, setSearchQuery] = useState('');
+
+        // imported to store latitude and longitude
+        const location = useLocation();
+        const { latLong } = location.state || { latLong: { lat: 0, long: 0 } }; 
 
         const fetchPins = async () => {
             setLoading(true); // Set loading to true when starting the fetch
@@ -60,6 +65,8 @@ type PinListPageProps = {
         )
         : pins;
 
+        
+
 
     return (
         <Container>
@@ -88,7 +95,7 @@ type PinListPageProps = {
                                     <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
                                     <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
-                                        <Button href={`/pinupdate/${pin.pinId}`} variant="primary">Update</Button>
+                                    <Button href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`} variant="primary">Update</Button>
                                         <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
                                     </div>
                                 </Card.Body>

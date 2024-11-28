@@ -136,6 +136,7 @@ const PinTable: React.FC = () => {
       navigate('/pincreate', { state: { latLong: latLong } });
     }
   }
+  
     return (
         <Container style={{ width: '1500px', height: '100%' }}>
             <div style={{ display: 'flex', width: '100%', height: '100%'}}>

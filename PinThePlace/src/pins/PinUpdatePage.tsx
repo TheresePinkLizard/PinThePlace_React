@@ -3,6 +3,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 import PinForm from './PinForm';
 import {Pin} from '../types/pin';
 import API_URL from '../apiConfig';
+import { useLocation } from 'react-router-dom';
 
 import * as PinService from './PinService';
 
@@ -18,7 +19,9 @@ const PinUpdatePage: React.FC = () => {
         const fetchPin = async () => {
           try {
             const data = await PinService.fetchPinById(pinId);
+            // sets longitude and latitude to be in pin
             setPin(data);
+
           } catch (error) {
             setError('Failed to fetch item');
             console.error('There was a problem with the fetch operation:', error);

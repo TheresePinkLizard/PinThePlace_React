@@ -5,8 +5,57 @@ using PinThePlace.DAL;
 using Microsoft.AspNetCore.Identity;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Http.HttpResults;
+using PinThePlace.DTOs;
 
 namespace PinThePlace.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+
+public class UserAPIController : Controller
+{
+    private readonly PinDbContext _pinDbContext;
+    private readonly UserManager <User> _userManager;
+    private readonly ILogger<PinController> _logger;
+
+    public UserAPIController(PinDbContext pinDbContext, UserManager<User> userManager,  ILogger<PinController> logger)
+    {
+        _pinDbContext = pinDbContext;
+        _userManager = userManager;
+        _logger = logger;
+    }
+
+    [HttpGet("userlist")]
+    public async Task<IActionResult> UserList()
+    {
+        try{
+        List<User> users = await _pinDbContext.Users.ToListAsync();
+
+        var userName = _userManager.GetUserName(User);
+        
+        if (userName != "Admin" )
+        {
+            return Unauthorized();
+            
+        }else{
+            // Map brukere til DTO-er
+            var userDtos = users.Select(user => new UserDto
+            {
+                UserName = user.UserName,
+                Email = user.Email
+
+            }).ToList();
+            return Ok(userDtos);
+        }
+        }
+        catch (Exception e){
+            _logger.LogError(e, "[UserController] Error while fetching users in Table action");
+            return NotFound("User list not found");
+        }
+    }
+}
+
+
 
 public class UserController : Controller
 {

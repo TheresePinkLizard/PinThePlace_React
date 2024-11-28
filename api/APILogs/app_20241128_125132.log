@@ -1,0 +1,11 @@
+2024-11-28 12:51:34.564 +01:00 [INF] User profile is available. Using 'C:\Users\solve\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-28 12:51:34.639 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-28 12:51:34.671 +01:00 [INF] Now listening on: https://localhost:7024
+2024-11-28 12:51:34.672 +01:00 [INF] Now listening on: http://localhost:5056
+2024-11-28 12:51:34.676 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-28 12:51:34.680 +01:00 [INF] Hosting environment: Development
+2024-11-28 12:51:34.681 +01:00 [INF] Content root path: C:\Users\solve\VSprojects\Webapplikasjoner\PinThePlace_React\api
+2024-11-28 12:52:20.894 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/ - null null
+2024-11-28 12:52:20.923 +01:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2024-11-28 12:52:20.965 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/ - 404 0 null 72.5383ms
+2024-11-28 12:52:20.972 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5056/, Response status code: 404

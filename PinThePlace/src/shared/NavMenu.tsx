@@ -19,6 +19,7 @@ const NavMenu: React.FC = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/Table">Home</Nav.Link>
                     <Nav.Link href="/pins">Pins</Nav.Link>
+                    <Nav.Link href="/pins">Users</Nav.Link>
                     <Nav.Link href="/HomePage">About</Nav.Link>
                     
                 </Nav>

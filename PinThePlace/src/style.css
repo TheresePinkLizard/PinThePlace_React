@@ -17,22 +17,27 @@
     height: 50px;
     margin-top:auto;
   }
+  
   .contentwindow{
-    height:600px;
-    overflow:scroll;
-    overflow-x:hidden;
-    /*border: 3px solid #feac93;*/
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
     background-color: #ffdecf;
     padding-top: 15px;
-  }
-  .contentwindow2{
+    display: none; 
+    width: 500px;
+}
+
+  .contentwindow2 {
+    display: block; 
     height:600px;
     overflow:scroll;
     overflow-x:hidden;
-    /*border: 3px solid #69dd82;*/
     background-color: #c5e5b6;
     padding-top: 15px;
+    width: 500px;
   }
+ 
   
   /*style for feed button*/
   .feedButton {

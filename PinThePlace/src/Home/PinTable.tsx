@@ -4,6 +4,7 @@ import L from 'leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import 'leaflet/dist/leaflet.css';
 import PinListPage from '../pins/PinListPage';
+import UserListPage from '../pins/PinListPage';
 import '../style.css';
 import MyPinListPage from '../pins/MyPinListPage';
 

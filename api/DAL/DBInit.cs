@@ -136,7 +136,31 @@ public static class DBInit
                 context.AddRange(pins);
                 context.SaveChanges();
             }
+            var sherlockPin = context.Pins.FirstOrDefault(p => p.Name == "Sherlock Holmes Museum");
+            var studentUser = context.Users.FirstOrDefault(u => u.UserName == "TheStudent");
+
+            if(sherlockPin == null || studentUser==null)
+            {
+                throw new Exception("Cannot create favorite seed");
+            }
+            else 
+            {
+                if (!context.Favorites.Any())
+                {
+                    var favorite = new Favorite
+                    {
+                        PinId = sherlockPin.PinId,
+                        UserId=studentUser.Id,
+                        MadeBy=sherlockPin.UserName,
+                        Category="Museum",
+                    };
+                    
+                    context.Favorites.Add(favorite);
+                    context.SaveChanges();
+                }
+            }
         }
-        
+
     }
+        
 }

@@ -82,4 +82,77 @@ public class PinRepository : IPinRepository
             return false;
         }
     }
+     public async Task<Favorite?> GetFavoriteById(int id)
+    {
+        try
+        {
+            return await _db.Favorites.FindAsync(id);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "[FavoriteRepository] Favorite FindAsync(id) failed when GetFavoriteById for FavId {FavId:0000}", id);
+            return null;
+        }
+    }
+
+    public async Task<IEnumerable<Favorite>> GetAllFavorites()
+    {
+        try{
+         
+         return await _db.Favorites.Include(f=> f.Pin).Include(f=> f.User).ToListAsync();
+
+        }
+        catch (Exception e){
+            _logger.LogError(e,"[PinRepository] Favorites ToListAsync() failed when GetAllFavorites()");
+            return new List<Favorite>(); 
+        }
+    }
+
+    public async Task<bool> SaveFavorite(Favorite favorite)
+    {
+        try
+        {
+            _db.Favorites.Add(favorite);
+            await _db.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "[PinRepository] Failed to save favorite with ID {@favorite}", favorite);
+            return false;
+        }
+    }
+
+     public async Task<bool> UpdateFavorite(Favorite favorite)
+    {   
+        try{
+        _db.Favorites.Update(favorite);
+        await _db.SaveChangesAsync();
+        return true;
+        } catch (Exception e){
+            _logger.LogError(e, "[PinRepository] Failed when updating the FavoriteId {FavoriteId:0000}", favorite);
+            return false;
+        }
+    }
+
+     public async Task<bool> DeleteFavorite(int id)
+    {
+        try{
+        var fav = await _db.Favorites.FindAsync(id);
+        if (fav == null)
+        {
+            _logger.LogWarning("[PinRepository] Favorite not found for deletion, FavoriteId {FavoriteId:0000}", id);
+            return false;
+        }
+
+        _db.Favorites.Remove(fav);
+        await _db.SaveChangesAsync();
+        return true;
+        } catch (Exception e)
+        {
+            _logger.LogError(e, "[PinRepository] Failed to delete favorite with ID {FavoriteId:0000}", id);
+            return false;
+        }
+    }
+
 }

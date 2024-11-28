@@ -22,6 +22,7 @@ public class PinDbContext : IdentityDbContext<User> // definerer at classen Item
     }                              // lager database med schema(tables,indexes, etc) basert på nåværende model definert i DbContext
     public DbSet<Pin> Pins { get; set; } // metoder for å lagre instanser av Item
     //public DbSet<User> Users{ get; set; }
+    public DbSet<Favorite> Favorites {get; set;}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

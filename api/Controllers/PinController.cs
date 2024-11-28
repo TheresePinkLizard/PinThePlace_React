@@ -186,8 +186,10 @@ public class PinController : Controller
             _logger.LogError("[PinController] Pin list not found while executing _pinRepository.GetAll()");
             return NotFound("Pin list not found");
         }
+        var favorites = await _pinRepository.GetAllFavorites();
 
-        var pinsViewModel = new PinsViewModel(pins, "Table");
+
+        var pinsViewModel = new PinsViewModel(pins,favorites, "Table");
         // en action kan returnere enten: View, JSON, en Redirect, eller annet. 
         // denne returnerer en view
         //Console.WriteLine($"Fetched {pins.Count} pins from the database.");

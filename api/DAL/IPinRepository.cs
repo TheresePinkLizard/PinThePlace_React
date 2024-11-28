@@ -10,4 +10,11 @@ public interface IPinRepository
     Task<bool> Create(Pin pin);
     Task<bool> Update(Pin pin);
     Task<bool> Delete(int id);
+
+     //For the favorites
+    Task<IEnumerable<Favorite>> GetAllFavorites();
+    Task<Favorite?> GetFavoriteById(int id);
+    Task<bool> SaveFavorite(Favorite favorite);
+    Task<bool> UpdateFavorite(Favorite favorite);
+    Task<bool> DeleteFavorite(int id);
 }

@@ -18,7 +18,7 @@ const NavMenu: React.FC = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link href="/Table">Home</Nav.Link>
-                    <Nav.Link href="/pins">Pins</Nav.Link>
+                    <Nav.Link href="/pins/">Pins</Nav.Link>
                     <Nav.Link href="/HomePage">About</Nav.Link>
                     
                 </Nav>

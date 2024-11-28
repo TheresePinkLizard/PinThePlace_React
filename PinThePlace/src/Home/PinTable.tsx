@@ -4,7 +4,7 @@ import L from 'leaflet';
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 import 'leaflet/dist/leaflet.css';
 import PinListPage from '../pins/PinListPage';
-import UserListPage from '../pins/PinListPage';
+import UserListPage from '../pins/UserListPage';
 import '../style.css';
 import MyPinListPage from '../pins/MyPinListPage';
 
@@ -43,22 +43,22 @@ const PinTable: React.FC = () => {
       };
   }, []);
     return (
-        <Container style={{ width: '1500px', height: '1000px' }}>
-            <div style={{ display: 'flex', width: '100%', height: 'auto' }}>
-                <div style={{ flex: '0 0 50%' }}>
+        <Container style={{ width: '1500px', height: '100%' }}>
+            <div style={{ display: 'flex', width: '100%', height: '100%'}}>
+                <div style={{ flex: '1' }}>
                     <h3>Find your place</h3>
-                    <div ref={mapRef} style={{ height: '500px', width: '100%' }}></div> {/* Use the ref here */}
+                    <div ref={mapRef} style={{ height: '700px', width: '100%' }}></div> {/* Use the ref here */}
                     <Button href='pincreate' className = "btn addpinButton mt-3">Add a pin</Button>
                 </div>
-                <div style={{ flex: '1' }}>
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    <Button className='feedButton' variant="primary" onClick={() => handleButtonClick('Button 1')}>Feed</Button>
-                    <Button className='mypinsButton' variant="secondary" onClick={() => handleButtonClick('Button 2')}>My Pins</Button>
+                <div style={{ flex: '1', height: '100%' }}>
+                    <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+                    <Button className='feedButton btn btn-lg' variant="primary" onClick={() => handleButtonClick('Button 1')}>Feed</Button>
+                    <Button className='mypinsButton btn-lg' variant="secondary" onClick={() => handleButtonClick('Button 2')}>My Pins</Button>
                     </div>
-                    <div id="feedwindow" className='contentwindow' style={{ display: content === 'Button 1' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px'}}>
+                    <div id="feedwindow" className='contentwindow' style={{ display: content === 'Button 1' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px'}}>
                         <PinListPage />
                     </div>
-                    <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '500px', height: '550px' }}>
+                    <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
                         <UserListPage />
                     </div>
                     </div>

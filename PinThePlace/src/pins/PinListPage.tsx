@@ -71,27 +71,25 @@ const PinListPage: React.FC = () => {
             {!loading && !error && filteredPins.length === 0 && <p>No pins match your search criteria.</p>}
         <Row>
             {filteredPins.map(pin => (
-                <Col xs={12} key={pin.pinId}>
+                <Col xs={12} key={pin.pinId} className="mb-4">
                     <Card style={{ marginBottom: '20px' }}>
                         <Row className="no-gutters">
                             <Col md={6}>
                                 <Card.Body>
                                     <Card.Title>{pin.name}</Card.Title>
-                                    <Card.Text>Rating: {pin.rating}</Card.Text>
+                                    <Card.Text><strong>Rating: {pin.rating}</strong></Card.Text>
                                     <Card.Text>Date: {(pin.dateCreated).toString()}</Card.Text>
-                                    <Card.Text>Comment: {pin.comment}</Card.Text>
-                                    <Card.Text>UserName: {pin.userName}</Card.Text>
+                                    <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
+                                    <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
                                         <Button href={`/pinupdate/${pin.pinId}`} variant="primary">Update</Button>
-                                    </div>
-                                    <div className="d-flex justify-content-between">
-                                        <Button variant="primary" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
+                                        <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
                                     </div>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>
                                 <div className="image-container">
-                                    <Card.Img variant="top" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
+                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
                                 </div>
                             </Col>
                         </Row>

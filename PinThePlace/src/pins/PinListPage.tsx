@@ -7,8 +7,13 @@ import API_URL from '../apiConfig';
 
 import * as PinService from './PinService';
 
-const PinListPage: React.FC = () => {
+type PinListPageProps = {
+    onCardClick: (lat: number, long: number) => void;
+  };
 
+  const PinListPage: React.FC<PinListPageProps> = ({ onCardClick }) => {
+
+        const username = sessionStorage.getItem('username');
         const [pins, setPins] = useState<Pin[]>([]);
         const [loading, setLoading] = useState<boolean>(false);
         const [error, setError] = useState<string | null>(null);
@@ -58,6 +63,7 @@ const PinListPage: React.FC = () => {
 
     return (
         <Container>
+            {username && <div>Logged in as: {username}</div>}
              <Form.Group className="mb-4">
                 <Form.Control
                     type="text"
@@ -71,27 +77,25 @@ const PinListPage: React.FC = () => {
             {!loading && !error && filteredPins.length === 0 && <p>No pins match your search criteria.</p>}
         <Row>
             {filteredPins.map(pin => (
-                <Col xs={12} key={pin.pinId}>
-                    <Card style={{ marginBottom: '20px' }}>
+                <Col xs={12} key={pin.pinId} className="mb-4">
+                    <Card style={{ marginBottom: '20px' }} onClick={() => onCardClick(pin.latitude, pin.longitude)}>
                         <Row className="no-gutters">
                             <Col md={6}>
                                 <Card.Body>
-                                    <Card.Title>{pin.name}</Card.Title>
-                                    <Card.Text>Rating: {pin.rating}</Card.Text>
+                                    <Card.Title><strong>{pin.name}</strong></Card.Title>
+                                    <Card.Text><strong>Rating: {pin.rating}</strong></Card.Text>
                                     <Card.Text>Date: {(pin.dateCreated).toString()}</Card.Text>
-                                    <Card.Text>Comment: {pin.comment}</Card.Text>
-                                    <Card.Text>UserName: {pin.userName}</Card.Text>
+                                    <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
+                                    <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
                                         <Button href={`/pinupdate/${pin.pinId}`} variant="primary">Update</Button>
-                                    </div>
-                                    <div className="d-flex justify-content-between">
-                                        <Button variant="primary" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
+                                        <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
                                     </div>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>
                                 <div className="image-container">
-                                    <Card.Img variant="top" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
+                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
                                 </div>
                             </Col>
                         </Row>
@@ -104,41 +108,3 @@ const PinListPage: React.FC = () => {
 };
 
 export default PinListPage;
-
-    // Mock data
-    /*const pins = [
-        {
-            PinId: 1,
-            Name: "Slottet",
-            Rating: 4,
-            Comment: "Kjempe fin arkitektur og park. Anbefales!",
-            Latitude: 59.91731919136782,
-            Longitude: 10.727738688356991,
-            UserName: "user1",
-            UserId: 1,
-            ImageUrl: "/images/cat.jpg"
-        },
-        {
-            PinId: 2,
-            Name: "OsloMet",
-            Rating: 5,
-            Comment: "Bra skole. Anbefales!",
-            Latitude: 59.921365321156706, 
-            Longitude: 10.733315263484577,
-            UserName: "user2",
-            UserId: 2,
-            ImageUrl: "/images/lynx.jpg"
-        },
-        {
-            PinId: 3,
-            Name: "Admin",
-            Rating: 5,
-            Comment: "Dette er en Admin pin!",
-            Latitude: 59.921365321156706, 
-            Longitude: 10.733315263484577,
-            UserName: "admin",
-            UserId: 3,
-            ImageUrl: "/images/tiger.jpg"
-        }
-    ];
-    */

@@ -1,15 +1,18 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 import '../style.css';
 
+
 const NavMenu: React.FC = () => {
+    const username = sessionStorage.getItem('username');
+
     return (
-        <Navbar expand="lg" style={{ backgroundColor: '#b4d0ff'}}>
+        <Navbar expand="lg" className='header'>
             <Navbar.Brand href="/Table">
                 <img
                     src="/images/header.png"  
                     width="auto"
-                    height="120"
+                    height="180"
                     className="d-inline-block align-top"
                     alt="Pin The Place logo"
                 />
@@ -20,8 +23,10 @@ const NavMenu: React.FC = () => {
                     <Nav.Link href="/Table">Home</Nav.Link>
                     <Nav.Link href="/pins">Pins</Nav.Link>
                     <Nav.Link href="/users">Users</Nav.Link>
+                    <Nav.Link href="/pins/">Pins</Nav.Link>
                     <Nav.Link href="/HomePage">About</Nav.Link>
-                    
+                    {username && <Nav.Link href="/logout">Logout</Nav.Link>}
+
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

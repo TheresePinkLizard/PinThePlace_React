@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using PinThePlace.Models;
+using PinThePlace.DTOs;
 using Microsoft.EntityFrameworkCore;
 using PinThePlace.DAL;
 using Microsoft.AspNetCore.Identity;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System.Security.Claims; 
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using PinThePlace.DTOs;
 
 namespace PinThePlace.Controllers;
+
 
 [ApiController]
 [Route("api/[controller]")]

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Globalization;
 using PinThePlace.Models;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,14 @@ builder.Services.AddCors(options =>
             options.AddPolicy("CorsPolicy",
                 builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         });
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+});
 
 builder.Services.AddControllers().AddNewtonsoftJson(options => 
 {
@@ -61,6 +70,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("CorsPolicy");
 app.MapControllerRoute(name: "api", pattern: "{controller}/{action=Index}/{id?}");
+app.UseAuthentication();
+app.UseAuthorization();
     
 
 app.Run();

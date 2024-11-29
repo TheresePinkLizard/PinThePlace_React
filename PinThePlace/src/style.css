@@ -5,7 +5,7 @@
     margin-top: 50px;
   }
   .header{
-    background-color: #f7a17d;
+    background-color: #87ba8f;
   }
   body {
     display:flex;
@@ -13,76 +13,108 @@
     min-height:100vh;
   }
   .footer{
-    background-color:#f7a17d;
+    background-color:#87ba8f;
     height: 100px;
     margin-top:auto;
   }
-  /*Feed window*/
+  /*FEED*/
   .contentwindow{
-    height: 600px;
-    overflow: scroll;
-    overflow-x: hidden;
-    background-color: #ffdecf;
-    padding-top: 15px;
-    display: none; 
-    width: 100%;
-}
-/*Mypins window*/
-  .contentwindow2 {
-    display: block; 
-    height:600px;
+    height:750px;
     overflow:scroll;
     overflow-x:hidden;
-    background-color: #c5e5b6;
+    /*border: 3px solid #feac93;*/
+    background-color: #ffdecf;
     padding-top: 15px;
-    width: 100%;
   }
- 
-  
-  /*style for feed button*/
-  .feedButton {
-    background-color:#ffddd3; 
-    border-color:#ffddd3;  
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    box-shadow: none !important;
-    font-weight: bold;
-    color: #6c4722!important;
+  /*MYPINS*/
+  .contentwindow2{
+    height:750px;
+    overflow:scroll;
+    overflow-x:hidden;
+    /*border: 3px solid #69dd82;*/
+    background-color: #fcec9c;
+    padding-top: 15px;
   }
-  .feedButton:hover{
-    color: #b07439;
-  }
-  .feedButton:focus,
-  .feedButton:active {
-      background-color:#ffdecf; 
-      border-color:#ffdecf;  
-      outline: none;
-      box-shadow: none !important;
-      color: #6c4722!important;
+  /*FAVORITES*/
+  .contentwindow3{
+    height:750px;
+    overflow:scroll;
+    overflow-x:hidden;
+    /*border: 3px solid #69dd82;*/
+    background-color: #a6d5e2;
+    padding-top: 15px;
   }
 
-  /*style for my pins button*/
-  .mypinsButton {
-    background-color: #c5e5b6; 
-     border-color:#c5e5b6; 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+ /*style for feed button*/
+ .feedButton {
+  background-color:#ffddd3; 
+  border-color:#ffddd3;  
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none !important;
+  font-weight: bold;
+  color: #543617;
+}
+.feedButton:hover
+{
+  color: #ffffff;
+  background-color:#f5ac8a; 
+}
+.feedButton:focus,
+.feedButton:active {
+    color: #543617;
+    background-color:#ffdecf; 
+    border-color:#ffdecf;  
+    outline: none;
     box-shadow: none !important;
-    font-weight: bold;
-    color: #37522e!important;;
-  }
-  .mypinsButton:hover
-  {
-    color: #6ba853;
-  }
-  .mypinsButton:focus,
-  .mypinsButton:active {
-      background-color: #c5e5b6; 
-      border-color:#c5e5b6;  
-      outline: none;
-      box-shadow: none !important;
-      color: #37522e!important;;
-  }
+    
+}
+
+/*style for my pins button*/
+.mypinsButton {
+  background-color: #fcec9c; 
+   border-color:#fcec9c; 
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none !important;
+  font-weight: bold;
+  color: #334e29;
+}
+.mypinsButton:hover{
+  color: #ffffff;
+  background-color: #b5b963; 
+}
+.mypinsButton:focus,
+.mypinsButton:active {
+    color: #334e29;
+    background-color: #fcec9c; 
+    border-color:#fcec9c;  
+    outline: none;
+    box-shadow: none !important;
+}
+ /*style for my pins button*/
+ .favsButton {
+  background-color: #a6d5e2; 
+   border-color:#a6d5e2; 
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none !important;
+  font-weight: bold;
+  color: #29324e;
+}
+.favsButton:hover{
+  color: #ffffff;
+  background-color: #519cb3; 
+}
+.favsButton:focus,
+.favsButton:active {
+    background-color: #a6d5e2; 
+    border-color:#a6d5e2;  
+    outline: none;
+    box-shadow: none !important;
+    color: #29324e;
+}
+
 
   /*style for add a pin button*/
   .addpinButton {
@@ -113,6 +145,7 @@
   }
 
 /*card styles*/
+/*
 .card{
   background-color: #ffdecf;
   border: none !important;
@@ -121,15 +154,16 @@
   margin: 0 auto;
   font-size: small;
 }
-
+*/
 /*card image*/
+/*
 .image-container {
   width: 100%;
-  height: 100%; /* Make sure the container takes the full height */
-  position: relative; /* This is needed to position the image absolutely within the container */
-  overflow: hidden; /* Hide the parts of the image that exceed the container */
-}
-
+  height: 100%; 
+  position: relative; 
+  overflow: hidden;  
+}*/
+/*
 .image-card {
   position: absolute;
   top: 0;
@@ -140,6 +174,7 @@
   object-position: center;
   
 }
+*/
 
   .active {
     background-color: #fffaf8 !important;

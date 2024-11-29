@@ -1,0 +1,401 @@
+2024-11-29 20:17:09.007 +01:00 [INF] User profile is available. Using 'C:\Users\solve\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-29 20:17:09.181 +01:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-11-29 20:17:09.235 +01:00 [INF] Now listening on: https://localhost:7024
+2024-11-29 20:17:09.238 +01:00 [INF] Now listening on: http://localhost:5056
+2024-11-29 20:17:09.245 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-29 20:17:09.248 +01:00 [INF] Hosting environment: Development
+2024-11-29 20:17:09.252 +01:00 [INF] Content root path: C:\Users\solve\VSprojects\Webapplikasjoner\PinThePlace_React\api
+2024-11-29 20:18:33.059 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:18:33.059 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:18:33.179 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:18:33.179 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:18:33.210 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:18:33.210 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:18:33.248 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:18:33.248 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:18:33.384 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:18:33.447 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:18:33.580 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 325.8014ms
+2024-11-29 20:18:33.581 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:18:33.583 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:18:33.589 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 539.444ms
+2024-11-29 20:18:33.590 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:18:33.594 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:18:33.594 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:18:33.602 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/images/happiness.png - null null
+2024-11-29 20:18:33.602 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/images/burger.png - null null
+2024-11-29 20:18:33.602 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/images/Oslomet.jpg - null null
+2024-11-29 20:18:33.603 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 354.2197ms
+2024-11-29 20:18:33.603 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:18:33.605 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 555.713ms
+2024-11-29 20:18:33.611 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:18:33.621 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/images/chidos.png - null null
+2024-11-29 20:18:33.622 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:18:33.625 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:18:33.627 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:18:33.636 +01:00 [INF] The file /images/happiness.png was not modified
+2024-11-29 20:18:33.636 +01:00 [INF] The file /images/chidos.png was not modified
+2024-11-29 20:18:33.636 +01:00 [INF] The file /images/Oslomet.jpg was not modified
+2024-11-29 20:18:33.636 +01:00 [INF] The file /images/burger.png was not modified
+2024-11-29 20:18:33.637 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/images/burger.png - 304 null image/png 35.3216ms
+2024-11-29 20:18:33.637 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/images/happiness.png - 304 null image/png 36.0749ms
+2024-11-29 20:18:33.637 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/images/chidos.png - 304 null image/png 15.9541ms
+2024-11-29 20:18:33.638 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/images/Oslomet.jpg - 304 null image/jpeg 35.435ms
+2024-11-29 20:18:33.646 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/images/sherlock.jpg - null null
+2024-11-29 20:18:33.647 +01:00 [INF] The file /images/sherlock.jpg was not modified
+2024-11-29 20:18:33.647 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/images/sherlock.jpg - 304 null image/jpeg 1.3721ms
+2024-11-29 20:18:33.713 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:18:33.715 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:18:33.719 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 124.2186ms
+2024-11-29 20:18:33.719 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:18:33.719 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 136.3258ms
+2024-11-29 20:18:33.719 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 91.6441ms
+2024-11-29 20:18:33.719 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:18:33.719 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 108.3796ms
+2024-11-29 20:19:42.563 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5056/Account/login - null null
+2024-11-29 20:19:42.565 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:42.566 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5056/Account/login - 204 null null 3.815ms
+2024-11-29 20:19:42.599 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/Account/login - application/json 50
+2024-11-29 20:19:42.600 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:42.601 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:19:42.619 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PinThePlace.DTOs.LoginDto) on controller PinThePlace.Controllers.AccountController (api).
+2024-11-29 20:19:42.941 +01:00 [ERR] [AccountController] Login failed for the user TheStudent
+2024-11-29 20:19:42.942 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-11-29 20:19:42.943 +01:00 [INF] Executed action PinThePlace.Controllers.AccountController.Login (api) in 323.9787ms
+2024-11-29 20:19:42.943 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:19:42.944 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/Account/login - 400 null text/plain; charset=utf-8 344.8546ms
+2024-11-29 20:19:46.296 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/Account/login - application/json 50
+2024-11-29 20:19:46.296 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:46.297 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:19:46.297 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PinThePlace.DTOs.LoginDto) on controller PinThePlace.Controllers.AccountController (api).
+2024-11-29 20:19:46.464 +01:00 [ERR] [AccountController] Login failed for the user TheStudent
+2024-11-29 20:19:46.464 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-11-29 20:19:46.465 +01:00 [INF] Executed action PinThePlace.Controllers.AccountController.Login (api) in 167.7694ms
+2024-11-29 20:19:46.465 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:19:46.466 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/Account/login - 400 null text/plain; charset=utf-8 170.2097ms
+2024-11-29 20:19:48.212 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:19:48.212 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:48.212 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:19:48.212 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:19:48.217 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:19:48.218 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:48.218 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:19:48.218 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:19:48.227 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:19:48.228 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 15.1812ms
+2024-11-29 20:19:48.228 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:19:48.228 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 16.4587ms
+2024-11-29 20:19:48.237 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:19:48.238 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:19:48.238 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:48.261 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:19:48.261 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:19:48.280 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 61.9589ms
+2024-11-29 20:19:48.281 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:19:48.281 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 63.6988ms
+2024-11-29 20:19:48.302 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:19:48.303 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 41.1171ms
+2024-11-29 20:19:48.303 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:19:48.303 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 66.4813ms
+2024-11-29 20:19:48.303 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:19:48.303 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:19:48.304 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:19:48.304 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:19:48.339 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:19:48.351 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 47.0478ms
+2024-11-29 20:19:48.351 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:19:48.351 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 47.8981ms
+2024-11-29 20:20:04.671 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5056/Account/login - null null
+2024-11-29 20:20:04.672 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:04.673 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5056/Account/login - 204 null null 1.2209ms
+2024-11-29 20:20:04.675 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/Account/login - application/json 50
+2024-11-29 20:20:04.675 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:04.675 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:04.675 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PinThePlace.DTOs.LoginDto) on controller PinThePlace.Controllers.AccountController (api).
+2024-11-29 20:20:04.696 +01:00 [ERR] [AccountController] Login failed for the user TheStundet
+2024-11-29 20:20:04.696 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-11-29 20:20:04.696 +01:00 [INF] Executed action PinThePlace.Controllers.AccountController.Login (api) in 20.7124ms
+2024-11-29 20:20:04.697 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:04.697 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/Account/login - 400 null text/plain; charset=utf-8 21.8279ms
+2024-11-29 20:20:08.969 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/Account/login - application/json 50
+2024-11-29 20:20:08.970 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:08.970 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:08.970 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PinThePlace.DTOs.LoginDto) on controller PinThePlace.Controllers.AccountController (api).
+2024-11-29 20:20:08.981 +01:00 [ERR] [AccountController] Login failed for the user TheStundet
+2024-11-29 20:20:08.981 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-11-29 20:20:08.983 +01:00 [INF] Executed action PinThePlace.Controllers.AccountController.Login (api) in 12.3963ms
+2024-11-29 20:20:08.983 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:08.983 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/Account/login - 400 null text/plain; charset=utf-8 13.8338ms
+2024-11-29 20:20:10.422 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:10.422 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:10.423 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:10.423 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:10.428 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:10.429 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:10.429 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:10.429 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:10.430 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:10.444 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 21.3192ms
+2024-11-29 20:20:10.444 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:10.444 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 22.913ms
+2024-11-29 20:20:10.445 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:10.456 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 26.1765ms
+2024-11-29 20:20:10.456 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:10.456 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 27.545ms
+2024-11-29 20:20:10.507 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:10.508 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:10.508 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:10.508 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:10.508 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:10.509 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:10.509 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:10.509 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:10.546 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:10.546 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 38.1822ms
+2024-11-29 20:20:10.546 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:10.546 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:10.546 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 39.3317ms
+2024-11-29 20:20:10.564 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 44.1818ms
+2024-11-29 20:20:10.564 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:10.564 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 55.861ms
+2024-11-29 20:20:23.327 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:23.327 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:23.328 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:23.328 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:23.328 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:23.328 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:23.328 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:23.328 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:23.357 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:23.361 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:23.362 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 33.7484ms
+2024-11-29 20:20:23.362 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:23.362 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 34.6738ms
+2024-11-29 20:20:23.371 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:23.371 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:23.372 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:23.372 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:23.372 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 43.7803ms
+2024-11-29 20:20:23.372 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:23.372 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 44.7749ms
+2024-11-29 20:20:23.376 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:23.376 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:23.376 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:23.376 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:23.376 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:23.377 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 5.021ms
+2024-11-29 20:20:23.377 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:23.377 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 5.8377ms
+2024-11-29 20:20:23.387 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:23.414 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 37.2641ms
+2024-11-29 20:20:23.414 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:23.414 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 38.2128ms
+2024-11-29 20:20:54.442 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5056/Account/login - null null
+2024-11-29 20:20:54.449 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.450 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5056/Account/login - 204 null null 9.7485ms
+2024-11-29 20:20:54.460 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/Account/login - application/json 50
+2024-11-29 20:20:54.460 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.460 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:54.460 +01:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PinThePlace.DTOs.LoginDto) on controller PinThePlace.Controllers.AccountController (api).
+2024-11-29 20:20:54.736 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-29 20:20:54.743 +01:00 [INF] Executed action PinThePlace.Controllers.AccountController.Login (api) in 282.9933ms
+2024-11-29 20:20:54.744 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.AccountController.Login (api)'
+2024-11-29 20:20:54.744 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/Account/login - 200 392 application/json; charset=utf-8 287.4349ms
+2024-11-29 20:20:54.771 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:54.775 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.776 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:54.776 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:54.776 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:54.776 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.776 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.776 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:54.825 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:54.825 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:54.825 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 49.0458ms
+2024-11-29 20:20:54.825 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.826 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 50.0666ms
+2024-11-29 20:20:54.830 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 54.7219ms
+2024-11-29 20:20:54.831 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:54.831 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 59.2327ms
+2024-11-29 20:20:54.839 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:54.839 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:20:54.840 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.840 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.840 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.840 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:54.840 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:54.840 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:20:54.895 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:54.895 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:54.895 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 55.0972ms
+2024-11-29 20:20:54.895 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.896 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 56.2808ms
+2024-11-29 20:20:54.934 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:54.934 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:54.934 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 94.009ms
+2024-11-29 20:20:54.934 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.935 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:20:54.935 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:54.935 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 2644 application/json; charset=utf-8 95.3377ms
+2024-11-29 20:20:54.947 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:54.947 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 12.2866ms
+2024-11-29 20:20:54.947 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:54.948 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 13.8232ms
+2024-11-29 20:20:55.047 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:20:55.047 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:20:55.047 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:55.051 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:20:55.085 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:20:55.086 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 34.5781ms
+2024-11-29 20:20:55.086 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:20:55.086 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 39.7052ms
+2024-11-29 20:21:23.598 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5056/api/favoriteapi/createfavorite - null null
+2024-11-29 20:21:23.599 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:23.599 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5056/api/favoriteapi/createfavorite - 204 null null 1.2605ms
+2024-11-29 20:21:23.605 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/api/favoriteapi/createfavorite - application/json 99
+2024-11-29 20:21:23.609 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:23.609 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.Create (api)'
+2024-11-29 20:21:23.615 +01:00 [INF] Route matched with {action = "Create", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(PinThePlace.DTOs.FavoriteDto) on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:21:23.673 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'PinThePlace.Models.Favorite'.
+2024-11-29 20:21:23.712 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.Create (api) in 97.1701ms
+2024-11-29 20:21:23.713 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.Create (api)'
+2024-11-29 20:21:23.713 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/api/favoriteapi/createfavorite - 201 137 application/json; charset=utf-8 107.6006ms
+2024-11-29 20:21:23.738 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:23.738 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:23.739 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:23.739 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:23.744 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:23.744 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 5.3631ms
+2024-11-29 20:21:23.744 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:23.745 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 7.0832ms
+2024-11-29 20:21:23.745 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:23.745 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:23.745 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:23.746 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:23.751 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:23.752 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 6.0758ms
+2024-11-29 20:21:23.752 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:23.752 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 6.735ms
+2024-11-29 20:21:36.232 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:21:36.232 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:36.232 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.232 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.232 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.232 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:21:36.233 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:36.233 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:21:36.244 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.263 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.264 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 29.9044ms
+2024-11-29 20:21:36.264 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.264 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 31.8756ms
+2024-11-29 20:21:36.312 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:36.312 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.319 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.319 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:36.333 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 94.1032ms
+2024-11-29 20:21:36.334 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:21:36.334 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 4923 application/json; charset=utf-8 102.3208ms
+2024-11-29 20:21:36.358 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.358 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 39.1586ms
+2024-11-29 20:21:36.358 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.358 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 46.2685ms
+2024-11-29 20:21:36.370 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:21:36.386 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:36.387 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.387 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.387 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.387 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:36.387 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:21:36.388 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:21:36.398 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.398 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 10.6758ms
+2024-11-29 20:21:36.398 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.398 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.398 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 12.3948ms
+2024-11-29 20:21:36.400 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:21:36.400 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:21:36.400 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.402 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:21:36.410 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:21:36.412 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 8.8434ms
+2024-11-29 20:21:36.412 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:21:36.412 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 12.3559ms
+2024-11-29 20:21:36.416 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 28.235ms
+2024-11-29 20:21:36.416 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:21:36.416 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 4923 application/json; charset=utf-8 46.1588ms
+2024-11-29 20:22:33.620 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5056/api/favoriteapi/createfavorite - null null
+2024-11-29 20:22:33.623 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:33.623 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5056/api/favoriteapi/createfavorite - 204 null null 5.8508ms
+2024-11-29 20:22:33.633 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5056/api/favoriteapi/createfavorite - application/json 95
+2024-11-29 20:22:33.636 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:33.636 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.Create (api)'
+2024-11-29 20:22:33.637 +01:00 [INF] Route matched with {action = "Create", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(PinThePlace.DTOs.FavoriteDto) on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:22:33.647 +01:00 [INF] Executing CreatedAtActionResult, writing value of type 'PinThePlace.Models.Favorite'.
+2024-11-29 20:22:33.649 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.Create (api) in 11.7518ms
+2024-11-29 20:22:33.651 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.Create (api)'
+2024-11-29 20:22:33.651 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5056/api/favoriteapi/createfavorite - 201 133 application/json; charset=utf-8 18.5801ms
+2024-11-29 20:22:33.675 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:33.675 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:33.675 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:33.675 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:33.683 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:33.683 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 8.1658ms
+2024-11-29 20:22:33.684 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:33.684 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 8.9013ms
+2024-11-29 20:22:33.684 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:33.684 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:33.685 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:33.685 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:33.703 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:33.704 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 18.8583ms
+2024-11-29 20:22:33.704 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:33.704 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 19.5591ms
+2024-11-29 20:22:38.600 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:38.600 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:22:38.600 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.600 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:22:38.600 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.601 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.601 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:22:38.601 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:38.610 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.638 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.638 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 37.7233ms
+2024-11-29 20:22:38.638 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.639 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 38.6942ms
+2024-11-29 20:22:38.671 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:38.678 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.688 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.688 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:38.695 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.696 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 7.9603ms
+2024-11-29 20:22:38.696 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.697 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 25.2045ms
+2024-11-29 20:22:38.702 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:38.702 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.702 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.702 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:38.702 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 101.7637ms
+2024-11-29 20:22:38.703 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:22:38.703 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 7504 application/json; charset=utf-8 102.7955ms
+2024-11-29 20:22:38.716 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - null null
+2024-11-29 20:22:38.716 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.716 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.718 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 14.2978ms
+2024-11-29 20:22:38.718 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:22:38.718 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.721 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 18.8373ms
+2024-11-29 20:22:38.721 +01:00 [INF] Route matched with {action = "FavoriteList", controller = "FavoriteAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FavoriteList() on controller PinThePlace.Controllers.FavoriteAPIController (api).
+2024-11-29 20:22:38.724 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - null null
+2024-11-29 20:22:38.725 +01:00 [INF] CORS policy execution successful.
+2024-11-29 20:22:38.725 +01:00 [INF] Executing endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.725 +01:00 [INF] Route matched with {action = "PinList", controller = "PinAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PinList() on controller PinThePlace.Controllers.PinAPIController (api).
+2024-11-29 20:22:38.732 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[PinThePlace.Models.Pin, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PinThePlace.DTOs.PinDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.732 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PinThePlace.Models.Favorite, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-29 20:22:38.733 +01:00 [INF] Executed action PinThePlace.Controllers.PinAPIController.PinList (api) in 7.5408ms
+2024-11-29 20:22:38.733 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.PinAPIController.PinList (api)'
+2024-11-29 20:22:38.733 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/pinapi/pinlist - 200 1709 application/json; charset=utf-8 8.577ms
+2024-11-29 20:22:38.803 +01:00 [INF] Executed action PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api) in 81.3652ms
+2024-11-29 20:22:38.803 +01:00 [INF] Executed endpoint 'PinThePlace.Controllers.FavoriteAPIController.FavoriteList (api)'
+2024-11-29 20:22:38.804 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5056/api/favoriteapi/favoritelist - 200 7504 application/json; charset=utf-8 87.7205ms

@@ -21,6 +21,7 @@ const L : any = window.L;
 const PinTable: React.FC = () => {
     const navigate = useNavigate();
     const [content, setContent] = useState('Button 1');
+    const [username, setUsername] = useState<string | null>(null);
     //const [content, setContent] = useState('Button 1');
 
   //const [content, setContent] = useState('Button 1');
@@ -46,6 +47,10 @@ const PinTable: React.FC = () => {
     if (!mapRef.current) {
       return;
     }
+    //Get username of loged-in user
+    const username = sessionStorage.getItem('username');
+    setUsername(username);
+
     //initialize leaflet map
     const map = L.map(mapRef.current).setView([59.9139,10.7522],13);
     mapInstance.current = map;
@@ -142,7 +147,7 @@ const PinTable: React.FC = () => {
         <Container style={{ width: '1500px', height: '100%' }}>
             <div style={{ display: 'flex', width: '100%', height: '100%'}}>
                 <div style={{ flex: '1' }}>
-                    <h3>Find your place</h3>
+                    <h3>Find your place{username ? `, ${username}` : ''}!</h3>
                     <div ref={mapRef} style={{ height: '700px', width: '100%' }}></div> {/* Use the ref here */}
                     <Button onClick={handleAddPin} className = "btn addpinButton mt-3">Add a pin</Button>
                 </div>

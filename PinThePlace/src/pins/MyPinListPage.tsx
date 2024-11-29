@@ -100,7 +100,7 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
                             <Row className="no-gutters">
                                 <Col md={6}>
                                     <Card.Body>
-                                        <Card.Title>{pin.name}</Card.Title>
+                                        <Card.Title><strong>{pin.name}</strong></Card.Title>
                                         <Card.Text><strong>Rating: </strong>{pin.rating}</Card.Text>
                                         <Card.Text><strong>Date: </strong>{(pin.dateCreated).toString()}</Card.Text>
                                         <Card.Text><strong>Comment: </strong>{pin.comment}</Card.Text>

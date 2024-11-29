@@ -10,7 +10,10 @@ const UserListPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
+    const username = sessionStorage.getItem('username');
+
     const fetchUsers = async () => {
+        if( username !== "Admin") return;
         setLoading(true); // Set loading to true when starting the fetch
         setError(null);   // Clear any previous errors
         try {
@@ -38,7 +41,6 @@ const UserListPage: React.FC = () => {
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>UserId</th>
                             <th>Username</th>
                             <th>Email</th>
                             <th>Pins</th>
@@ -46,8 +48,7 @@ const UserListPage: React.FC = () => {
                     </thead>
                     <tbody>
                         {users.map(user => (
-                            <tr key={user.userId}>
-                                <td>{user.userId}</td>
+                            <tr key={user.userName}>
                                 <td>{user.userName}</td>
                                 <td>{user.email}</td>
                                 <td>{user.pins && user.pins.map(pin => `Pin${pin.pinId}`).join(', ')}</td>

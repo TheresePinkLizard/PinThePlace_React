@@ -90,6 +90,41 @@ public class FavoriteAPIController : Controller
         return StatusCode(500, "Internal server error");
     }
 
+    [HttpPut("updatefavorite/{id}")]
+    public async Task<IActionResult> UpdateFavorite(int id, [FromBody] FavoriteDto favoriteDto)
+    {
+        if (favoriteDto == null)
+        {
+            return BadRequest("Favorite data cannot be null");
+        }
+        // Find the item in the database
+        var existingFavorite = await _pinRepository.GetFavoriteById(id);
+        if (existingFavorite == null)
+        {
+            return NotFound("Favorite not found");
+        }
+        // Update the item properties
+
+        existingFavorite.Category=favoriteDto.Category;
+        
+        // Save the changes
+        bool updateSuccessful = await _pinRepository.UpdateFavorite(existingFavorite);
+        if (updateSuccessful)
+        {
+            return Ok(existingFavorite); // Return the updated item
+        }
+
+        _logger.LogWarning("[FavoriteAPIController] Favorite update failed {@favorite}", existingFavorite);
+        return StatusCode(500, "Internal server error");
+    }
+
+
+
+
+
+
+
+
 
 }
 

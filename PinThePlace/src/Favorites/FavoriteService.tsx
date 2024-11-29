@@ -22,7 +22,7 @@ const handleResponse = async (response: Response) => {
     return handleResponse(response);
   };
 
-  // Delete pin
+  // Delete favorite
     export const deleteFavorite = async (FavoriteId: number) => {
     const response = await fetch(`${API_URL}/api/favoriteapi/delete/${FavoriteId}`, {
       method: 'DELETE',
@@ -30,6 +30,8 @@ const handleResponse = async (response: Response) => {
     return handleResponse(response);
     };
 
+
+    //Create/save a favorite
     export const SaveFavorite = async (favorite: any) => {
       const response = await fetch(`${API_URL}/api/favoriteapi/createfavorite`, {
         method: 'POST',
@@ -38,6 +40,26 @@ const handleResponse = async (response: Response) => {
       });
       return handleResponse(response);
     };
+
+    // Get favorite by id
+  export const fetchFavoriteById = async (favoriteId: string) => {
+  const response = await fetch(`${API_URL}/api/favoriteapi/${favoriteId}`);
+  return handleResponse(response);
+  };
+
+
+  //Update favorite
+  export const updateFavorite = async (favoriteId: string, favorite: any) => {
+    const response = await fetch(`${API_URL}/api/favoriteapi/updatefavorite/${favoriteId}`, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(favorite),
+    });
+    return handleResponse(response);
+  };
+
+
+
 
 
 

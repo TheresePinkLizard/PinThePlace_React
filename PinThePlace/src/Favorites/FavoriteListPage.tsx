@@ -96,6 +96,9 @@ type FavoriteListPageProps = {
                                     <div className="d-flex justify-content-between">
                                         <Button variant="danger" onClick={() => handleFavoriteDeleted(favorite.favoriteId)}>Delete</Button>
                                     </div>
+                                    <Link to={`/favoriteupdate/${favorite.favoriteId}`} className="btn btn-primary">
+                                                Update
+                                            </Link>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>

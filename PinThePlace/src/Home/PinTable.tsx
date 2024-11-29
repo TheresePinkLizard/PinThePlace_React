@@ -78,7 +78,7 @@ const PinTable: React.FC = () => {
       currentMarker.current = L.marker(e.latlng).addTo(map);
      
       // creating popup on the map with longitude and latitude
-      currentMarker.current.bindPopup(`Latitude: ${lat} <br> Longitude: ${long}`).openPopup();
+      //currentMarker.current.bindPopup(`Latitude: ${lat} <br> Longitude: ${long}`).openPopup();
       setLatLong({lat, long});
     }
 
@@ -150,15 +150,15 @@ const PinTable: React.FC = () => {
                     <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
                     <Button className='feedButton  btn-lg' variant="primary" onClick={() => handleButtonClick('Button 1')}>Feed</Button>
                     <Button className='mypinsButton btn-lg' variant="secondary" onClick={() => handleButtonClick('Button 2')}>My Pins</Button>
-                    <Button className='favoritesButton btn-lg' variant="secondary" onClick={() => handleButtonClick('Button 3')}>Favorites</Button>
+                    <Button className='favsButton btn-lg' variant="secondary" onClick={() => handleButtonClick('Button 3')}>Favorites</Button>
                     </div>
                     <div id="feedwindow" className='contentwindow' style={{ display: content === 'Button 1' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px'}}>
                         <PinListPage onCardClick={handleCardClick}/>
                     </div>
                     <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
-                        <MyPinListPage/>
+                        <MyPinListPage onCardClick={handleCardClick}/>
                     </div>
-                    <div id="favoriteswindow" className='contentwindow2' style={{ display: content === 'Button 3' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
+                    <div id="favoriteswindow" className='contentwindow3' style={{ display: content === 'Button 3' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
                         <FavoriteListPage onCardClick={handleCardClick}/>
                     </div>
 
@@ -171,7 +171,7 @@ const PinTable: React.FC = () => {
                     </div>
                 </div>
             <div className='footer'>
-            <p>Laget av Therese Trollbu, Solveig Jørgensen og Ingeborg Randen</p>
+            <p className='text-center'><strong>Sub-application 2</strong></p>
             </div>
         </Container>
     );

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using PinThePlace.Models;
 using PinThePlace.ViewModels;
 using PinThePlace.DAL;
+using PinThePlace.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 
@@ -52,6 +53,44 @@ public class FavoriteAPIController : Controller
         return NoContent(); 
 
     }
+
+    [HttpGet("{id}")]
+
+    public async Task<IActionResult> GetFavorite(int id)
+    {
+        var favorite = await _pinRepository.GetFavoriteById(id);
+        if (favorite == null)
+        {
+            _logger.LogError("[FavoriteAPIController] Favorite not found for FavoriteId {FavoriteId:0000}",id);
+            return NotFound("Favorite not found");
+        }
+        return Ok(favorite);
+    }
+
+    [HttpPost("createfavorite")]
+    public async Task<IActionResult> Create([FromBody] FavoriteDto favoriteDto)
+    {
+        if (favoriteDto == null)
+        {
+            return BadRequest("Favorite cannot be null");
+        }
+        var newFavorite = new Favorite
+        {
+            PinId = favoriteDto.PinId,
+            Category = favoriteDto.Category,
+            UserId=favoriteDto.UserId,
+            MadeBy=favoriteDto.MadeBy,
+        };        
+        bool returnOk = await _pinRepository.SaveFavorite(newFavorite);
+        if (returnOk)
+          {
+        return CreatedAtAction(nameof(FavoriteList), new { id = newFavorite.FavoriteId }, newFavorite);
+        }
+        _logger.LogWarning("[FavoriteAPIController] Favorite creation failed {@favorite}", newFavorite);
+        return StatusCode(500, "Internal server error");
+    }
+
+
 }
 
 

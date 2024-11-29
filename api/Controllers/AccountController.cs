@@ -33,10 +33,10 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel model)
+    public async Task<IActionResult> Login([FromBody] LoginDto logindto)
     {
-      var user = await _userManager.FindByNameAsync(model.UserName);
-        if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+      var user = await _userManager.FindByNameAsync(logindto.UserName);
+        if (user != null && await _userManager.CheckPasswordAsync(user, logindto.Password))
         {
             var claims = new List<Claim>
             {
@@ -58,10 +58,13 @@ public class AccountController : ControllerBase
     }
     else
     {
-        _logger.LogError("[AccountController] Login failed for the user {UserName}", model.UserName);
+        _logger.LogError("[AccountController] Login failed for the user {UserName}", logindto.UserName);
         return BadRequest("Username or password is incorrect.");
         }
     }
+
+
+
 
 
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
 import API_URL from '../apiConfig';
-import jwt from 'jsonwebtoken';
 
 
 import * as LoginService from './LoginService';
@@ -17,8 +16,7 @@ const LoginPage: React.FC = () => {
     try {
       const token = await LoginService.fetchLogin(username,password);
       const data = await token.json();
-      //const decodedToken = jwt.decode(token);
-      //const userId = decodedToken['userId'];
+    
 
       sessionStorage.setItem('userToken',data.token);
       sessionStorage.setItem('username',username);

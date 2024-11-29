@@ -30,6 +30,15 @@ const handleResponse = async (response: Response) => {
     return handleResponse(response);
     };
 
+    export const SaveFavorite = async (favorite: any) => {
+      const response = await fetch(`${API_URL}/api/favoriteapi/createfavorite`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(favorite),
+      });
+      return handleResponse(response);
+    };
+
 
 
 

@@ -37,17 +37,9 @@ public class UserAPIController : Controller
         var users = await _pinDbContext.Users.Include(u => u.Pins) // Inkluder relasjonen til Pins
             .ToListAsync();
 
-        var userName = _userManager.GetUserName(User);
-        
-        if (userName != "Admin" )
-        {
-            return Unauthorized();
-            
-        }else{
             // Map brukere til DTO-er
             var userDtos = users.Select(user => new UserDto
             {
-            UserId = user.Id,
             UserName = user.UserName,
             Email = user.Email,
             Pins = user.Pins?.Select(pin => new PinDto
@@ -56,7 +48,7 @@ public class UserAPIController : Controller
             }).ToList()
         }).ToList();
             return Ok(userDtos);
-        }
+        
         }
         catch (Exception e){
             _logger.LogError(e, "[UserController] Error while fetching users in Table action");

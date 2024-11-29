@@ -45,6 +45,12 @@ type PinListPageProps = {
             fetchPins();
         }, []);
 
+        useEffect(() => {
+            if (pins.length > 0) {
+              setSelectedCard(pins[0].pinId); // Set the selectedCard to the pinId of the first pin
+            }
+          }, [pins]);
+
         const handlePinDeleted = async(pinId: number) => {
             const confirmDelete = window.confirm(`Are you sure you want to delete the pin ${pinId}?`);
             if (confirmDelete) {

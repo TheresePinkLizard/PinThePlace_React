@@ -126,7 +126,7 @@ const PinTable: React.FC = () => {
     
     // Add a new marker
     currentMarker.current = L.marker([lat, long]).addTo(map);
-    currentMarker.current.bindPopup(`Latitude: ${lat} <br> Longitude: ${long}`).openPopup();
+    //currentMarker.current.bindPopup(`Latitude: ${lat} <br> Longitude: ${long}`).openPopup();
     
     // Update the map's view
     map.setView([lat, long], 13);

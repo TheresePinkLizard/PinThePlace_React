@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { Card, Container, Row, Col, Table, Button, Form} from 'react-bootstrap';
 import {Pin} from '../types/pin';
 import PinTable from '../Home/PinTable';
@@ -8,18 +8,19 @@ import { useLocation } from 'react-router-dom';
 
 import * as PinService from './PinService';
 
+
+
 type PinListPageProps = {
     onCardClick: (lat: number, long: number) => void;
   };
 
   const PinListPage: React.FC<PinListPageProps> = ({ onCardClick }) => {
-
         const username = sessionStorage.getItem('username');
         const [pins, setPins] = useState<Pin[]>([]);
         const [loading, setLoading] = useState<boolean>(false);
         const [error, setError] = useState<string | null>(null);
         const [searchQuery, setSearchQuery] = useState('');
-
+        const navigate = useNavigate();
         // imported to store latitude and longitude
         const location = useLocation();
         const { latLong } = location.state || { latLong: { lat: 0, long: 0 } }; 
@@ -56,6 +57,9 @@ type PinListPageProps = {
             }
           }; 
         
+        const handleAddToFavoritesClicked = (pin: Pin) => {
+            navigate('/favoritecreate', {state: {favoritedpin: pin}});
+        };
 
         const filteredPins = searchQuery
         ? pins.filter(pin =>
@@ -96,7 +100,8 @@ type PinListPageProps = {
                                     <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
                                     <Button href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`} variant="primary">Update</Button>
-                                        <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
+                                    <Button variant="success" onClick={() => handleAddToFavoritesClicked(pin)}>Add to Favorites</Button>
+                                    <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
                                     </div>
                                 </Card.Body>
                             </Col>

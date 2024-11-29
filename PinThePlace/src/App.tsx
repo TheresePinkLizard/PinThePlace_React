@@ -9,6 +9,7 @@ import PinUpdatePage from './pins/PinUpdatePage';
 import UserListPage from './pins/UserListPage';
 import LoginPage from './Authentication/LoginPage';
 import Logout from './Authentication/LogoutPage';
+import FavoriteCreatePage from './Favorites/FavoriteCreatePage';
 
 // Code to call homepage: <HomePage/>
 const App: React.FC = () => {
@@ -25,7 +26,9 @@ const App: React.FC = () => {
             <Route path="/pinupdate/:pinId" element={<PinUpdatePage/>}/>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/favoritecreate" element={<FavoriteCreatePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
+            
 
           </Routes>
         </Router>

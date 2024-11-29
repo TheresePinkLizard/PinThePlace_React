@@ -7,6 +7,7 @@ const Logout = () => {
   useEffect(() => {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('userToken');
+    sessionStorage.removeItem('userId');
     navigate('/login');
   }, [navigate]);
 

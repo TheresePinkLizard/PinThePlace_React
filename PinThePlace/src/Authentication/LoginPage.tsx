@@ -14,13 +14,12 @@ const LoginPage: React.FC = () => {
     event.preventDefault();
     
     try {
-      const token = await LoginService.fetchLogin(username,password);
-      const data = await token.json();
-    
+      const data = await LoginService.fetchLogin(username,password);
+   
 
       sessionStorage.setItem('userToken',data.token);
       sessionStorage.setItem('username',username);
-      sessionStorage.setItem('usedId',data.userId);
+      sessionStorage.setItem('userId',data.userId);
 
       navigate(-1);
     } catch (error) {

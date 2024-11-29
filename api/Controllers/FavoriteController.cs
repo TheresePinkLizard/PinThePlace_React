@@ -40,6 +40,18 @@ public class FavoriteAPIController : Controller
         return Ok(favorites);
     }
 
+    [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> DeleteFavoriteConfirmed(int id)
+    {
+        bool returnOk = await _pinRepository.DeleteFavorite(id);
+        if (!returnOk)
+        {
+            _logger.LogError("[FavoriteAPIController] favorite deletion failed for the FavoriteId {FavoriteId:0000}", id);
+            return BadRequest("Favorite deletion failed");
+        }
+        return NoContent(); 
+
+    }
 }
 
 

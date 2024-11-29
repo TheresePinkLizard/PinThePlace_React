@@ -22,6 +22,14 @@ const handleResponse = async (response: Response) => {
     return handleResponse(response);
   };
 
+  // Delete pin
+    export const deleteFavorite = async (FavoriteId: number) => {
+    const response = await fetch(`${API_URL}/api/favoriteapi/delete/${FavoriteId}`, {
+      method: 'DELETE',
+    });
+    return handleResponse(response);
+    };
+
 
 
 

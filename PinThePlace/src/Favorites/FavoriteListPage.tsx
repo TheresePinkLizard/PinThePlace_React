@@ -13,7 +13,7 @@ type FavoriteListPageProps = {
     onCardClick: (lat: number, long: number) => void;
   };
 
-  const PinListPage: React.FC<FavoriteListPageProps> = ({ onCardClick }) => {
+  const FavoriteListPage: React.FC<FavoriteListPageProps> = ({ onCardClick }) => {
 
         const username = sessionStorage.getItem('username');
         const userId = sessionStorage.getItem('userId');
@@ -50,7 +50,7 @@ type FavoriteListPageProps = {
             if (confirmDelete) {
               try {
                 await FavoriteService.deleteFavorite(FavoriteId);
-                setFavs(prevFavorties => prevFavorites.filter(favorite =>favorite.FavoriteId !== FavoriteId));
+                setFavs(prevFavorites => prevFavorites.filter(favorite =>favorite.favoriteId !== FavoriteId));
                 console.log('Favorite deleted:', FavoriteId);
               } catch (error) {
                 console.error('Error deleting favorite:', error);
@@ -60,13 +60,11 @@ type FavoriteListPageProps = {
           }; 
         
 
-        const filteredPins = searchQuery
-        ? pins.filter(pin =>
-            pin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            pin.rating.toString().includes(searchQuery) ||
-            pin.userName.toLowerCase().includes(searchQuery.toLowerCase())
+        const filteredFavorites = searchQuery
+        ? favorites.filter(favorite =>
+            favorite.category.toLowerCase().includes(searchQuery.toLowerCase())
         )
-        : pins;
+        : favorites;
 
         
 
@@ -77,35 +75,32 @@ type FavoriteListPageProps = {
              <Form.Group className="mb-4">
                 <Form.Control
                     type="text"
-                    placeholder="Search pins by name, rating, or username..."
+                    placeholder="Search favorite by category..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </Form.Group>
             {loading && <p>Loading...</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            {!loading && !error && filteredPins.length === 0 && <p>No pins match your search criteria.</p>}
+            {!loading && !error && filteredFavorites.length === 0 && <p>No favorites match your search criteria.</p>}
         <Row>
-            {filteredPins.map(pin => (
-                <Col xs={12} key={pin.pinId} className="mb-4">
-                    <Card style={{ marginBottom: '20px' }} onClick={() => onCardClick(pin.latitude, pin.longitude)}>
+            {filteredFavorites.map(favorite => (
+                <Col xs={12} key={favorite.favoriteId} className="mb-4">
+                    <Card style={{ marginBottom: '20px' }} onClick={() => onCardClick(favorite.pin.latitude, favorite.pin.longitude)}>
                         <Row className="no-gutters">
                             <Col md={6}>
                                 <Card.Body>
-                                    <Card.Title><strong>{pin.name}</strong></Card.Title>
-                                    <Card.Text><strong>Rating: {pin.rating}</strong></Card.Text>
-                                    <Card.Text>Date: {(pin.dateCreated).toString()}</Card.Text>
-                                    <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
-                                    <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
+                                    <Card.Title><strong>{favorite.pin.name}</strong></Card.Title>
+                                    <Card.Text><strong>Category:</strong> {favorite.category}</Card.Text>
+                                    <Card.Text><strong>UserName: </strong>{favorite.pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
-                                    <Button href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`} variant="primary">Update</Button>
-                                        <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
+                                        <Button variant="danger" onClick={() => handleFavoriteDeleted(favorite.favoriteId)}>Delete</Button>
                                     </div>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>
                                 <div className="image-container">
-                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
+                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${favorite.pin.imageUrl}`} alt={favorite.pin.name}/>
                                 </div>
                             </Col>
                         </Row>
@@ -117,4 +112,4 @@ type FavoriteListPageProps = {
     );
 };
 
-export default PinListPage;
+export default FavoriteListPage;

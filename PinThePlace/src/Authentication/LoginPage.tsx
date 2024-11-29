@@ -16,13 +16,14 @@ const LoginPage: React.FC = () => {
     
     try {
       const token = await LoginService.fetchLogin(username,password);
-      const decodedToken = jwt.decode(token);
-      const userId = decodedToken['userId'];
+      const data = await token.json();
+      //const decodedToken = jwt.decode(token);
+      //const userId = decodedToken['userId'];
 
-      sessionStorage.setItem('userToken',token);
+      sessionStorage.setItem('userToken',data.token);
       sessionStorage.setItem('username',username);
-      sessionStorage.setItem('usedId',userId);
-      
+      sessionStorage.setItem('usedId',data.userId);
+
       navigate(-1);
     } catch (error) {
       console.error("There was an error", error);

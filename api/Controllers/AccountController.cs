@@ -41,7 +41,7 @@ public class AccountController : ControllerBase
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.NameIdentifier, user.Id)
+                new Claim("userId", user.Id)
             };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super_long_and_super_secure_secret_key_26143526143514352134621321313524362145"));

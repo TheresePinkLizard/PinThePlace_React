@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate} from 'react-router-dom';
 import API_URL from '../apiConfig';
+import jwt from 'jsonwebtoken';
+
 
 import * as LoginService from './LoginService';
 
@@ -14,11 +16,16 @@ const LoginPage: React.FC = () => {
     
     try {
       const token = await LoginService.fetchLogin(username,password);
+      const decodedToken = jwt.decode(token);
+      const userId = decodedToken['userId'];
+
       sessionStorage.setItem('userToken',token);
       sessionStorage.setItem('username',username);
+      sessionStorage.setItem('usedId',userId);
+      
       navigate(-1);
     } catch (error) {
-      console.error("Det funka kje", error);
+      console.error("There was an error", error);
     }
   };
 

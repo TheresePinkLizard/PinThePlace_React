@@ -10,10 +10,12 @@ import * as PinService from '../pins/PinService';
 import * as FavoriteService from '../Favorites/FavoriteService';
 
 type FavoriteListPageProps = {
-    onCardClick: (lat: number, long: number) => void;
+    onCardClick: (lat: number, long: number, pinId: number) => void;
+    selectedCard: any;
+    setSelectedCard: React.Dispatch<React.SetStateAction<any>>;
   };
 
-  const FavoriteListPage: React.FC<FavoriteListPageProps> = ({ onCardClick }) => {
+  const FavoriteListPage: React.FC<FavoriteListPageProps> = ({ onCardClick,  selectedCard, setSelectedCard }) => {
 
         const username = sessionStorage.getItem('username');
         const userId = sessionStorage.getItem('userId');
@@ -86,7 +88,7 @@ type FavoriteListPageProps = {
         <Row>
             {filteredFavorites.map(favorite => (
                 <Col xs={12} key={favorite.favoriteId} className="mb-4">
-                    <Card style={{ marginBottom: '20px' }} onClick={() => onCardClick(favorite.pin.latitude, favorite.pin.longitude)}>
+                    <Card style={{ marginBottom: '20px',backgroundColor: favorite.pin.pinId === selectedCard ? 'white' : 'initial' }} onClick={() => {onCardClick(favorite.pin.latitude, favorite.pin.longitude, favorite.pin.pinId);setSelectedCard(favorite.pin.pinId);}}>
                         <Row className="no-gutters">
                             <Col md={6}>
                                 <Card.Body>

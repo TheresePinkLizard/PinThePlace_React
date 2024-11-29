@@ -119,9 +119,7 @@
   /*style for add a pin button*/
   .addpinButton {
     background-color: #334e29; 
-     border-color:#334e29; 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-color:#334e29; 
     box-shadow: none !important;
     font-weight: bold;
     color: #deffcb;

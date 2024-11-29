@@ -10,16 +10,18 @@ import UserListPage from './pins/UserListPage';
 import LoginPage from './Authentication/LoginPage';
 import Logout from './Authentication/LogoutPage';
 import FavoriteCreatePage from './Favorites/FavoriteCreatePage';
+import React, { useState } from 'react';
 
 // Code to call homepage: <HomePage/>
 const App: React.FC = () => {
+  const [selectedCard, setSelectedCard] = useState<any>(null);
   return (
    <Container>
     <NavMenu />
         <Router>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/pins" element={<PinListPage onCardClick={() => {}} />} />
+            <Route path="/pins" element={<PinListPage onCardClick={() => {}} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />} />
             <Route path="/table" element={<Table />} /> 
             <Route path="/users" element={<UserListPage/>} /> 
             <Route path="/pincreate" element={<PinCreatePage />} /> 

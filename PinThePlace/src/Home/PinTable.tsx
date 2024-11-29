@@ -21,6 +21,7 @@ const L : any = window.L;
 const PinTable: React.FC = () => {
     const navigate = useNavigate();
     const [content, setContent] = useState('Button 1');
+    const [selectedCard, setSelectedCard] = useState(null); // to highlight selected cards
     //const [content, setContent] = useState('Button 1');
 
   //const [content, setContent] = useState('Button 1');
@@ -36,7 +37,7 @@ const PinTable: React.FC = () => {
         navigate('/login');
     };
 
- // const mapRef = useRef(null); // This creates a reference to your map div
+ // const mapRef = useRef(null); // This creates a reference to the map div
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
   //const navigate = useNavigate();
@@ -67,7 +68,6 @@ const PinTable: React.FC = () => {
 
     map.addControl(searchControl);
       // function to handle map click events
-     // Makes a pop up that shows the clicked places' latitude and longitude 
      function onMapClick(e) {
       var lat = e.latlng.lat.toFixed(6);
       var long = e.latlng.lng.toFixed(6);
@@ -94,8 +94,6 @@ const PinTable: React.FC = () => {
                 map.removeLayer(currentMarker.current);
             }
             currentMarker.current = L.marker([lat,long]).addTo(map);
-
-             // creating popup on the map with longitude and latitude
             currentMarker.current.bindPopup(`Latitude: ${lat} <br> Longitude: ${long}`).openPopup();
 
             setLatLong({lat, long});
@@ -110,8 +108,12 @@ const PinTable: React.FC = () => {
     };
   }, []);
 
-  const handleCardClick = (lat: number, long: number) => {
+  const handleCardClick = (lat: number, long: number, pinId:number) => {
     const map = mapInstance.current;
+
+    // used to handles clicked cards
+    setSelectedCard(pinId);
+
     // Remove the existing marker
     if (currentMarker.current) {
       map.removeLayer(currentMarker.current);
@@ -153,13 +155,13 @@ const PinTable: React.FC = () => {
                     <Button className='favsButton btn-lg' variant="secondary" onClick={() => handleButtonClick('Button 3')}>Favorites</Button>
                     </div>
                     <div id="feedwindow" className='contentwindow' style={{ display: content === 'Button 1' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px'}}>
-                        <PinListPage onCardClick={handleCardClick}/>
+                         <PinListPage onCardClick={handleCardClick} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
                     </div>
                     <div id="favwindow" className='contentwindow2' style={{ display: content === 'Button 2' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
-                        <MyPinListPage onCardClick={handleCardClick}/>
+                        <MyPinListPage onCardClick={handleCardClick} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
                     </div>
                     <div id="favoriteswindow" className='contentwindow3' style={{ display: content === 'Button 3' ? 'block' : 'none', overflow: 'auto', width: '100%', height: '750px' }}>
-                        <FavoriteListPage onCardClick={handleCardClick}/>
+                        <FavoriteListPage onCardClick={handleCardClick} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
                     </div>
 
                     <div>

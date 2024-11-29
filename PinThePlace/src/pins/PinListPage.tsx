@@ -11,10 +11,12 @@ import * as PinService from './PinService';
 
 
 type PinListPageProps = {
-    onCardClick: (lat: number, long: number) => void;
+    onCardClick: (lat: number, long: number, pinId: number) => void;
+    selectedCard: any;
+    setSelectedCard: React.Dispatch<React.SetStateAction<any>>;
   };
 
-  const PinListPage: React.FC<PinListPageProps> = ({ onCardClick }) => {
+  const PinListPage: React.FC<PinListPageProps> = ({ onCardClick, selectedCard, setSelectedCard }) => {
         const username = sessionStorage.getItem('username');
         const [pins, setPins] = useState<Pin[]>([]);
         const [loading, setLoading] = useState<boolean>(false);
@@ -89,8 +91,8 @@ type PinListPageProps = {
         <Row>
             {filteredPins.map(pin => (
                 <Col xs={12} key={pin.pinId} className="mb-4">
-                    <Card style={{ marginBottom: '20px' }} onClick={() => onCardClick(pin.latitude, pin.longitude)}>
-                        <Row className="no-gutters">
+                    <Card style={{ marginBottom: '20px',backgroundColor: pin.pinId === selectedCard ? 'white' : 'initial' }} onClick={() => {onCardClick(pin.latitude, pin.longitude, pin.pinId);setSelectedCard(pin.pinId);}}>
+                    <Row className="no-gutters">
                             <Col md={6}>
                                 <Card.Body>
                                     <Card.Title><strong>{pin.name}</strong></Card.Title>

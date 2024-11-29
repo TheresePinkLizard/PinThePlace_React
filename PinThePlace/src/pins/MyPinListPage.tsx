@@ -10,11 +10,13 @@ import * as PinService from './PinService';
 } */
 
 
-type PinListPageProps = {
-    onCardClick: (lat: number, long: number) => void;
+type MyPinListPageProps = {
+    onCardClick: (lat: number, long: number, pinId: number) => void;
+    selectedCard: any;
+    setSelectedCard: React.Dispatch<React.SetStateAction<any>>;
     };
       
-const PinListPage: React.FC<PinListPageProps>  =({ onCardClick }) =>  {
+const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, setSelectedCard }) =>  {
 
     const [pins, setPins] = useState<Pin[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
@@ -93,7 +95,7 @@ const PinListPage: React.FC<PinListPageProps>  =({ onCardClick }) =>  {
             <Row>
                 {filteredPins.map((pin) => (
                     <Col xs={12} key={pin.pinId}>
-                        <Card style={{ marginBottom: '20px' }}  onClick={() => onCardClick(pin.latitude, pin.longitude)}>
+                        <Card style={{ marginBottom: '20px',backgroundColor: pin.pinId === selectedCard ? 'white' : 'initial' }} onClick={() => {onCardClick(pin.latitude, pin.longitude, pin.pinId);setSelectedCard(pin.pinId);}}>
                             <Row className="no-gutters">
                                 <Col md={6}>
                                     <Card.Body>

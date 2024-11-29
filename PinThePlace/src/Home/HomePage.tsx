@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
     
 
     return (
-        <div>
+        <div className='text-center'>
             <h1>Welcome to PinThePlace!</h1>
             <p>In this application you are able to save your favorite locations by pinning the place!</p>
             <p>Creating a pin is easy! Just click on the map, press the button "Add a pin" to fill out information. You can even upload your own photos! </p>
@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
             <p>We hope you have fun pinning places!</p>
         
             <Link to="/table">
-                <button>Go to Table</button>
+                <button>Start pinning places!</button>
             </Link>
         </div>
         

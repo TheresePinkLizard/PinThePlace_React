@@ -81,6 +81,7 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
 
     return (
         <Container>
+            {username && <div>Logged in as: {username}</div>}
             <Form.Group className="mb-4">
                 <Form.Control
                     type="text"
@@ -100,20 +101,17 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
                                 <Col md={6}>
                                     <Card.Body>
                                         <Card.Title>{pin.name}</Card.Title>
-                                        <Card.Text>Rating: {pin.rating}</Card.Text>
-                                        <Card.Text>Date: {(pin.dateCreated).toString()}</Card.Text>
-                                        <Card.Text>Comment: {pin.comment}</Card.Text>
-                                        <Card.Text>UserName: {pin.userName}</Card.Text>
+                                        <Card.Text><strong>Rating: </strong>{pin.rating}</Card.Text>
+                                        <Card.Text><strong>Date: </strong>{(pin.dateCreated).toString()}</Card.Text>
+                                        <Card.Text><strong>Comment: </strong>{pin.comment}</Card.Text>
+                                        <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                         <div className="d-flex justify-content-between">
                                             <Button href={`/pinupdate/${pin.pinId}`} variant="primary">
                                                 Update
-                                            </Button>
-                                        </div>
-                                        <div className="d-flex justify-content-between">
+                                            </Button>        
                                             <Button
-                                                variant="primary"
-                                                onClick={() => handlePinDeleted(pin.pinId)}
-                                            >
+                                                variant="danger"
+                                                onClick={() => handlePinDeleted(pin.pinId)}>
                                                 Delete
                                             </Button>
                                         </div>

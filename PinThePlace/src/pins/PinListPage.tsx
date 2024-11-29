@@ -103,7 +103,7 @@ type PinListPageProps = {
                                 <Card.Body>
                                     <Card.Title><strong>{pin.name}</strong></Card.Title>
                                     <Card.Text><strong>Rating: {pin.rating}</strong></Card.Text>
-                                    <Card.Text>Date: {(pin.dateCreated).toString()}</Card.Text>
+                                    <Card.Text><strong>Date: </strong>{(pin.dateCreated).toString()}</Card.Text>
                                     <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
                                     <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">

@@ -28,12 +28,14 @@ type FavoriteListPageProps = {
         const { latLong } = location.state || { latLong: { lat: 0, long: 0 } }; 
 
         const fetchFavorites = async () => {
+            if(!username) return;
             setLoading(true); // Set loading to true when starting the fetch
             setError(null);   // Clear any previous errors
         try {
             const data = await FavoriteService.fetchFavorites();
-            setFavs(data);
-            console.log(data);
+            const userFavorites = data.filter((favorite: Favorite) => favorite.userId === userId);  
+            setFavs(userFavorites);
+            console.log(userFavorites);
             } catch (error) {
             console.error(`There was a problem with the fetch operation: ${error.message}`);
             setError('Failed to fetch pins.');
@@ -59,6 +61,7 @@ type FavoriteListPageProps = {
             }
           }; 
         
+        
 
         const filteredFavorites = searchQuery
         ? favorites.filter(favorite =>
@@ -66,7 +69,13 @@ type FavoriteListPageProps = {
         )
         : favorites;
 
-        
+        if (!username) {
+            return (
+                <Container>
+                    <p>Please log in to view your favorite pins.</p>
+                    </Container>
+                );
+            }
 
 
     return (

@@ -101,10 +101,27 @@ type PinListPageProps = {
                                     <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>
                                     <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
-                                    <Button href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`} variant="primary">Update</Button>
-                                    <Button variant="success" onClick={() => handleAddToFavoritesClicked(pin)}>Add to Favorites</Button>
-                                    <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>Delete</Button>
-                                    </div>
+                                    
+                                    {(username === "Admin" || pin.userName === username) && (
+                                        <>
+                                            <Button
+                                                href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`}
+                                                variant="primary"
+                                            >
+                                                Update
+                                            </Button>
+                                            <Button variant="danger" onClick={() => handlePinDeleted(pin.pinId)}>
+                                                Delete
+                                            </Button>
+                                        </>
+                                    )}
+                                    
+                                    {username && (
+                                        <Button variant="success" onClick={() => handleAddToFavoritesClicked(pin)}>
+                                            Add to Favorites
+                                        </Button>
+                                    )}
+                                </div>
                                 </Card.Body>
                             </Col>
                             <Col md={6}>

@@ -8,9 +8,10 @@ import {Favorite} from '../types/favorite';
 // import API_URL from '../apiConfig';
 
 interface FavoriteFormProps {
-    favoritedpin: Pin;
+    favoritedpin?: Pin;
     isUpdate?: boolean;
     existingFavorite?:Favorite;
+    favoriteId? : number;
     onFavoriteChanged: (newFavorite: Favorite) => void;
 }
 
@@ -30,9 +31,9 @@ const FavoriteForm: React.FC<FavoriteFormProps> = ({
 
         const favorite: Favorite = {
             favoriteId: isUpdate ? existingFavorite?.favoriteId : undefined,
-            pinId:favoritedpin.pinId,
+            pinId: isUpdate ? existingFavorite?.pinId : favoritedpin?.pinId,
             userId: userId,
-            madeby:favoritedpin.userName,
+            madeby: isUpdate ? existingFavorite?.madeby : favoritedpin?.userName,
             category: category
         };
         onFavoriteChanged(favorite);

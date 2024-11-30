@@ -4,6 +4,13 @@
     float: left;
     margin-top: 50px;
   }
+  .loginTitle{
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  .loginText{
+    padding-bottom: 20px;
+  }
   .header{
     background-color: #87ba8f;
   }

@@ -31,13 +31,21 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-      <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
-      {error && <p style={{ color: 'red' }}>{error}</p>} {/* Viser feilmelding */}
-      {loading && <p>Logger inn...</p>}
-      <input type="submit" />
-    </form>
+    <div>
+        <div className='text-center loginTitle'> <h1>Log in page</h1></div>
+        <div className='loginText text-center'>
+        <form onSubmit={onSubmit}>
+      
+        <p>Username: <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" /></p>
+        
+        <p>Password: <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" /></p>
+
+        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Viser feilmelding */}
+        {loading && <p>Logger inn...</p>}
+        <input type="submit" />
+      </form>
+    </div>
+   </div>
   );
 };
 

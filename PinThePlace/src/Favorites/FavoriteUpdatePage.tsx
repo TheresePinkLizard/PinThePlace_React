@@ -37,7 +37,7 @@ const FavoriteUpdatePage: React.FC = () => {
         try {
           const data = await FavoriteService.updateFavorite(favoriteId, favorite);
           console.log('Favorite updated successfully:', data);
-          navigate('/pins'); // Navigate back after successful creation
+          navigate('/table'); // Navigate back after successful creation
         } catch (error) {
           console.error('There was a problem with the fetch operation:', error);
         }

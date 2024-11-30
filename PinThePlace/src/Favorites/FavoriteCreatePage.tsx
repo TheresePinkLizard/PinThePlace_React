@@ -20,7 +20,7 @@ const FavoriteCreatePage: React.FC = () => {
     try {
       const data = await FavoriteService.SaveFavorite(favorite);
       console.log('Favorite created successfully:', data);
-      navigate('../pins'); // Navigate back after successful creation
+      navigate('../table'); // Navigate back after successful creation
     } catch (error) {
       console.error('There was a problem with the save operation:', error);
     }

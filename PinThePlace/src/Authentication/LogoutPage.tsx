@@ -8,7 +8,7 @@ const Logout = () => {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('userToken');
     sessionStorage.removeItem('userId');
-    navigate('/login');
+    navigate('/');
   }, [navigate]);
 
   return null;

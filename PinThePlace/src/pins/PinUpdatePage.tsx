@@ -37,8 +37,8 @@ const PinUpdatePage: React.FC = () => {
 
         try {
           const data = await PinService.updatePin(Number(pinId), pin);
-          console.log('Item updated successfully:', data);
-          navigate('/items'); // Navigate back after successful creation
+          console.log('Pin updated successfully:', data);
+          navigate('/table'); // Navigate back after successful creation
         } catch (error) {
           console.error('There was a problem with the fetch operation:', error);
         }

@@ -104,7 +104,11 @@ type FavoriteListPageProps = {
                                     <Card.Title><strong>{favorite.pin.name}</strong></Card.Title>
                                     <Card.Text><strong>Rating: </strong>{favorite.pin.rating}</Card.Text>
                                     <Card.Text><strong>Category:</strong> {favorite.category}</Card.Text>
-                                    <Card.Text><strong>Date: </strong>{(favorite.pin.dateCreated).toString()}</Card.Text>
+                                    <Card.Text><strong>Date: </strong>
+                                        {
+                                            new Date(favorite.pin.dateCreated).toISOString().split('.')[0].replace('T', ' ')
+                                        }
+                                    </Card.Text>
                                     <Card.Text><strong>Comment: </strong>{favorite.pin.comment}</Card.Text>
                                     <Card.Text><strong>UserName: </strong>{favorite.pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">

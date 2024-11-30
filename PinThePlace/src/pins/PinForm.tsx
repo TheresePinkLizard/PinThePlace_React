@@ -83,15 +83,13 @@ const PinForm: React.FC<PinFormProps> = ({
 
       <Form.Group controlId="formPinRating">
         <Form.Label>Rating</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter pin rating"
-          value={rating}
-          onChange={(e) => setRating(Number(e.target.value))}
-          required
-          min="1"
-          max="5"
-        />
+        <Form.Control as="select" value={rating} onChange={(e) => setRating(Number(e.target.value))} >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </Form.Control>
       </Form.Group>
 
       <Form.Group controlId="formPinComment">

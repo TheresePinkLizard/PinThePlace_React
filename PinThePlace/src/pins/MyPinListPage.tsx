@@ -102,7 +102,11 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
                                     <Card.Body>
                                         <Card.Title><strong>{pin.name}</strong></Card.Title>
                                         <Card.Text><strong>Rating: </strong>{pin.rating}</Card.Text>
-                                        <Card.Text><strong>Date: </strong>{(pin.dateCreated).toString()}</Card.Text>
+                                        <Card.Text><strong>Date: </strong>
+                                        {
+                                            new Date(pin.dateCreated).toISOString().split('.')[0].replace('T', ' ')
+                                        }
+                                        </Card.Text>
                                         <Card.Text><strong>Comment: </strong>{pin.comment}</Card.Text>
                                         <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                         <div className="d-flex justify-content-between">

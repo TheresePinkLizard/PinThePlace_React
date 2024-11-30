@@ -6,10 +6,29 @@ import '../style.css';
 const NavMenu: React.FC = () => {
 
     const [username, setUsername] = useState<string | null>(null);
-    useEffect(() => {
-        // Hent brukernavnet fra sessionStorage
+    
+    const updateUsername = () => {
         const storedUsername = sessionStorage.getItem('username');
         setUsername(storedUsername);
+    };
+    
+    useEffect(() => {
+              // Hent brukernavnet første gang komponenten rendres
+              updateUsername();
+
+              // Legg til en lytter for endringer i sessionStorage
+              const handleStorageChange = (event: StorageEvent) => {
+                  if (event.key === 'username') {
+                      updateUsername();
+                  }
+              };
+      
+              window.addEventListener('storage', handleStorageChange);
+      
+              // Rydd opp lytteren når komponenten demonteres
+              return () => {
+                  window.removeEventListener('storage', handleStorageChange);
+              };
       }, []);
 
     return (
@@ -30,8 +49,8 @@ const NavMenu: React.FC = () => {
                     <Nav.Link href="/pins">Pins</Nav.Link>
                     {username === 'Admin' && <Nav.Link href="/users">Users</Nav.Link>} {/* Kun for Admin */}
                     <Nav.Link href="/HomePage">About</Nav.Link>
+                    {!username && <Nav.Link href="/login">Login</Nav.Link>}
                     {username && <Nav.Link href="/logout">Logout</Nav.Link>}
-
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

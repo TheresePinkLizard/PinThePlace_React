@@ -169,11 +169,7 @@ const PinTable: React.FC = () => {
                         <FavoriteListPage onCardClick={handleCardClick} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
                     </div>
 
-                    <div>
-                    <h1>Here you can login</h1>
-                    <button onClick={navigateToLogin}>Login</button>
-                    </div>
-
+                
 
                     </div>
                 </div>

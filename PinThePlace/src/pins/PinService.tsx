@@ -53,11 +53,10 @@ export const createPin = async (formData: FormData): Promise<Pin> => {
   //return handleResponse(response);
 };
 // Put update pin
-export const updatePin = async (pinId: number, pin: any) => {
+export const updatePin = async (pinId: number, formData: any) => {
   const response = await fetch(`${API_URL}/api/pinapi/update/${pinId}`, {
-    method: 'PUT',
-    headers,
-    body: JSON.stringify(pin),
+    method: 'POST',
+    body: formData,
   });
   return handleResponse(response);
 };

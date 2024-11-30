@@ -112,8 +112,8 @@ public class PinAPIController : Controller
         return Ok(pin);
     }
 
-    [HttpPut("update/{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] PinDto pinDto)
+    [HttpPost("update/{id}")]
+    public async Task<IActionResult> Update(int id, [FromForm] PinDto pinDto, [FromServices] IWebHostEnvironment hostEnvironment)
     {
         if (pinDto == null)
         {
@@ -129,7 +129,18 @@ public class PinAPIController : Controller
         existingPin.Name = pinDto.Name;
         existingPin.Rating = pinDto.Rating;
         existingPin.Comment = pinDto.Comment;
-        existingPin.ImageUrl = pinDto.ImageUrl;
+
+        if(pinDto.UploadedImage!=null)
+        {
+            var filePath = Path.Combine(hostEnvironment.WebRootPath,"images",pinDto.UploadedImage.FileName);
+            using (var stream = System.IO.File.Create(filePath))
+            {
+                await pinDto.UploadedImage.CopyToAsync(stream);
+            }
+            existingPin.ImageUrl = "/images/"+pinDto.UploadedImage.FileName;
+        }
+
+       // existingPin.ImageUrl = pinDto.ImageUrl;
         existingPin.DateCreated = pinDto.DateCreated;
         existingPin.Latitude = pinDto.Latitude;
         existingPin.Longitude = pinDto.Longitude;

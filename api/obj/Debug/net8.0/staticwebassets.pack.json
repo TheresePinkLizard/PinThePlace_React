@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\map.png"
     },
     {
+      "Id": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\wwwroot\\images\\mattesymbol.jpg",
+      "PackagePath": "staticwebassets\\images\\mattesymbol.jpg"
+    },
+    {
       "Id": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\wwwroot\\images\\pexels-padrinan-255379.jpg",
       "PackagePath": "staticwebassets\\images\\pexels-padrinan-255379.jpg"
     },

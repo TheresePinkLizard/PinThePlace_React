@@ -6,7 +6,7 @@ import { Pin } from '../types/pin';
 // import API_URL from '../apiConfig';
 
 interface PinFormProps {
-  onPinChanged: (newPin: Pin) => void;
+  onPinChanged: (newPin: FormData) => void;
   pinId?: number;
   isUpdate?: boolean;
   initialData?: Pin;
@@ -47,9 +47,23 @@ const PinForm: React.FC<PinFormProps> = ({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
+    //To be able to upload an image we need to send it as FormData
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('rating', rating.toString());
+    formData.append('comment',comment);
+    formData.append('latitude',latitude.toString());
+    formData.append('longitude',longitude.toString());
+    if(uploadedImage) {
+      formData.append('uploadedImage',uploadedImage);
+    }
     const dateCreated = new Date();
-    const pin: Pin = { pinId, name, rating, comment, imageUrl, latitude, longitude, uploadedImage, dateCreated, userId, userName};
-    onPinChanged(pin); // Call the passed function with the item data
+    formData.append('dateCreated',dateCreated.toISOString());
+    formData.append('userId',userId);
+    formData.append('userName',userName);
+
+    //const pin: Pin = { pinId, name, rating, comment, imageUrl, latitude, longitude, uploadedImage, dateCreated, userId, userName};
+    onPinChanged(formData); // Call the passed function with the item data
   };
 
   return (

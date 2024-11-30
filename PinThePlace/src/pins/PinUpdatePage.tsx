@@ -33,10 +33,10 @@ const PinUpdatePage: React.FC = () => {
     }, [pinId]);
 
     
-    const handlePinUpdated = async (pin: Pin) => {
+    const handlePinUpdated = async (pin: FormData) => {
 
         try {
-          const data = await PinService.updatePin(pin.pinId, pin);
+          const data = await PinService.updatePin(Number(pinId), pin);
           console.log('Item updated successfully:', data);
           navigate('/items'); // Navigate back after successful creation
         } catch (error) {

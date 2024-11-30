@@ -119,11 +119,11 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
                                 </Col>
                                 <Col md={6}>
                                     <div className="image-container">
-                                        <Card.Img
+                                        {pin.imageUrl && <Card.Img
                                             variant="top"
                                             src={`${API_URL}${pin.imageUrl}`}
                                             alt={pin.name}
-                                        />
+                                        />}
                                     </div>
                                 </Col>
                             </Row>

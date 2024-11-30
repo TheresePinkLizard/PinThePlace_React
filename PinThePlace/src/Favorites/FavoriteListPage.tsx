@@ -117,7 +117,7 @@ type FavoriteListPageProps = {
                             </Col>
                             <Col md={6}>
                                 <div className="image-container">
-                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${favorite.pin.imageUrl}`} alt={favorite.pin.name}/>
+                                    {favorite.pin.imageUrl && <Card.Img variant="top" className="image-card" src={`${API_URL}${favorite.pin.imageUrl}`} alt={favorite.pin.name}/>}
                                 </div>
                             </Col>
                         </Row>

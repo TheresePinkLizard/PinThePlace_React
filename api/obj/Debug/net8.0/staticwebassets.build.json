@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7d5y8NIliUJLrSFCFHk9N/pXXRYAvsMNH+j7a1xmiE4=",
+  "Hash": "OyVRN+sfXZ3aXyEkjpTdoQvYh/BMcH2s/k/YMvXrmYE=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\map.png"
+    },
+    {
+      "Identity": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\wwwroot\\images\\mattesymbol.jpg",
+      "SourceId": "api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\wwwroot\\",
+      "BasePath": "_content/api",
+      "RelativePath": "images/mattesymbol.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\mattesymbol.jpg"
     },
     {
       "Identity": "C:\\Users\\inger\\Documents\\GitHub\\PinThePlace_React\\api\\wwwroot\\images\\Oslomet.jpg",

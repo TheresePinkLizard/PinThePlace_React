@@ -132,7 +132,7 @@ type PinListPageProps = {
                             </Col>
                             <Col md={6}>
                                 <div className="image-container">
-                                    <Card.Img variant="top" className="image-card" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>
+                                    {pin.imageUrl && <Card.Img variant="top" className="image-card" src={`${API_URL}${pin.imageUrl}`} alt={pin.name}/>}
                                 </div>
                             </Col>
                         </Row>

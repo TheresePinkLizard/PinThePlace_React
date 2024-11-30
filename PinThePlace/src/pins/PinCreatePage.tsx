@@ -14,7 +14,7 @@ const PinCreatePage: React.FC = () => {
   const { latLong } = location.state || { latLong: { lat: 0, long: 0 } }; //Default to 0,0 if no latLong was passed
 
   const navigate = useNavigate(); // Create a navigate function
-  const handlePinCreated = async (pin: Pin) => {
+  const handlePinCreated = async (pin: FormData) => {
     try {
       const data = await PinService.createPin(pin);
       console.log('Pin created successfully:', data);

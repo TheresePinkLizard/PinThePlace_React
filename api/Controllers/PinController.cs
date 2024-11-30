@@ -59,18 +59,30 @@ public class PinAPIController : Controller
     }
 
 [HttpPost("create")]
-    public async Task<IActionResult> Create([FromBody] PinDto pinDto)
+    public async Task<IActionResult> Create([FromForm] PinDto pinDto, [FromServices] IWebHostEnvironment hostEnvironment)
     {
         if (pinDto == null)
         {
             return BadRequest("Pin cannot be null");
+        }
+
+        string imageUrl = "";
+
+        if(pinDto.UploadedImage!=null)
+        {
+        var filePath = Path.Combine(hostEnvironment.WebRootPath,"images",pinDto.UploadedImage.FileName);
+        using (var stream = System.IO.File.Create(filePath))
+        {
+            await pinDto.UploadedImage.CopyToAsync(stream);
+        }
+        imageUrl = "/images/"+ pinDto.UploadedImage.FileName;
         }
         var newPin = new Pin
         {
             Name = pinDto.Name,
             Rating = pinDto.Rating,
             Comment = pinDto.Comment,
-            ImageUrl = pinDto.ImageUrl,
+            ImageUrl = imageUrl,
             Latitude = pinDto.Latitude,
             Longitude = pinDto.Longitude,
             UploadedImage = pinDto.UploadedImage,

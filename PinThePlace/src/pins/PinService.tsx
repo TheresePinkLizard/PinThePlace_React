@@ -1,3 +1,4 @@
+import {Pin} from '../types/pin';
 import API_URL from '../apiConfig'; // Update the path if necessary
 
 const headers = {
@@ -27,13 +28,29 @@ export const fetchPinById = async (pinId: string) => {
   return handleResponse(response);
 };
 // Post create pin
-export const createPin = async (pin: any) => {
+export const createPin = async (formData: FormData): Promise<Pin> => {
   const response = await fetch(`${API_URL}/api/pinapi/create`, {
     method: 'POST',
-    headers,
-    body: JSON.stringify(pin),
+    body: formData,
   });
-  return handleResponse(response);
+
+  const data = await handleResponse(response);
+
+  const newPin: Pin = {
+    pinId: data.pinId,
+    name: data.name,
+    rating: Number(data.rating),
+    comment: data.comment,
+    imageUrl: data.imageUrl,
+    latitude: Number(data.latitude),
+    longitude: Number(data.longitude),
+    uploadedImage: data.uploadedImage,
+    dateCreated: new Date(data.dateCreated),
+    userId: data.userId,
+    userName: data.userName
+  }
+  return newPin;
+  //return handleResponse(response);
 };
 // Put update pin
 export const updatePin = async (pinId: number, pin: any) => {

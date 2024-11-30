@@ -33,8 +33,8 @@ const PinForm: React.FC<PinFormProps> = ({
     }
   }, [initialData]);
   const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
-  const [userId, setUserId] = useState<string>(initialData?.userId || '');
-  const [userName, setUserName] = useState<string>(initialData?.userName || '');
+  const [userId, setUserId] = useState<string>(sessionStorage.getItem('userId') || '');
+  const [userName, setUserName] = useState<string>(sessionStorage.getItem('username') || '');
 
 
   //const [error, setError] = useState<string | null>(null);
@@ -46,6 +46,8 @@ const PinForm: React.FC<PinFormProps> = ({
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    const dateCreated = new Date();
     const pin: Pin = { pinId, name, rating, comment, imageUrl, latitude, longitude, uploadedImage, dateCreated, userId, userName};
     onPinChanged(pin); // Call the passed function with the item data
   };
@@ -82,7 +84,7 @@ const PinForm: React.FC<PinFormProps> = ({
         <Form.Label>Comment</Form.Label>
         <Form.Control
           as="textarea"
-          rows={3}
+          rows={2}
           placeholder="Enter pin comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -92,34 +94,14 @@ const PinForm: React.FC<PinFormProps> = ({
         />
       </Form.Group>
 
-      <Form.Group controlId="formPinImageUrl">
-        <Form.Label>Image URL</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter image URL"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-      </Form.Group>
-
       <Form.Group controlId="formPinLatitude">
         <Form.Label>Latitude</Form.Label>
-        <Form.Control
-          type="number"
-          value={latitude}
-          onChange={(e) => setLatitude(Number(e.target.value))}
-          required
-        />
+        <p>{latitude}</p>
       </Form.Group>
 
       <Form.Group controlId="formPinLongitude">
         <Form.Label>Longitude</Form.Label>
-        <Form.Control
-          type="number"
-          value={longitude}
-          onChange={(e) => setLongitude(Number(e.target.value))}
-          required
-        />
+        <p>{longitude}</p>
       </Form.Group>
 
       <Form.Group controlId="formPinUploadedImage">
@@ -130,40 +112,6 @@ const PinForm: React.FC<PinFormProps> = ({
             setUploadedImage(target.files ? target.files[0] : undefined); }}
         />
       </Form.Group>
-
-
-
-      <Form.Group controlId="formPinDateCreated">
-        <Form.Label>Date Created</Form.Label>
-        <Form.Control
-          type="date"
-          value={dateCreated instanceof Date ? dateCreated.toISOString().substring(0, 10) : ''}
-          onChange={(e) => setDateCreated(e.target.value ? new Date(e.target.value) : null)}
-        />
-      </Form.Group>
-
-    
-      <Form.Group controlId="formPinUserId">
-        <Form.Label>UserId</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter userId"
-          value={userId}
-          onChange={(e) =>setUserId(e.target.value)} 
-        />
-      </Form.Group>
-
-      <Form.Group controlId="formPinUserName">
-        <Form.Label>UserName</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter userName"
-          value={userName}
-          onChange={(e) =>setUserName(e.target.value)} 
-        />
-      </Form.Group>
-
-
 
       <Button variant="primary" type="submit">{isUpdate ? 'Update Pin' : 'Create Pin!'}</Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">Cancel</Button>

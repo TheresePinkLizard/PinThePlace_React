@@ -139,10 +139,18 @@ const PinTable: React.FC = () => {
     if (!latLong.lat || !latLong.long) {
         e.preventDefault();
         alert('Please click on the map first before trying to add a pin!.');
-    }else{
+    }
+    else{
+
+      if(!sessionStorage.getItem("username"))
+      {
+        e.preventDefault();
+        alert('Please login before you add a pin')
+      }
+      else{
       // Navigate to the PinCreatePage and pass the latLong as state
       navigate('/pincreate', { state: { latLong: latLong } });
-    }
+    }}
   }
   
     return (

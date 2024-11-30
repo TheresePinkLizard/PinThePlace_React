@@ -18,7 +18,7 @@ const PinCreatePage: React.FC = () => {
     try {
       const data = await PinService.createPin(pin);
       console.log('Pin created successfully:', data);
-      navigate('/pins'); // Navigate back after successful creation
+      navigate('/table'); // Navigate back after successful creation
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }

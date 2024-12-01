@@ -10,18 +10,9 @@ public class PinDbContext : IdentityDbContext<User> // definerer at classen Item
 {
     public PinDbContext(DbContextOptions<PinDbContext> options) : base (options) // konstruktør. konfigurerer database connection string
     {
-       /* try
-        {
-            Database.EnsureCreated();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error creating database: {ex.Message}");
-        }*/
-        // lager en tom database hvis den ikke eksisterer en database fra før av som er ssosiert med nåværende DbContext
-    }                              // lager database med schema(tables,indexes, etc) basert på nåværende model definert i DbContext
-    public DbSet<Pin> Pins { get; set; } // metoder for å lagre instanser av Item
-    //public DbSet<User> Users{ get; set; }
+    
+    }                             
+    public DbSet<Pin> Pins { get; set; } 
     public DbSet<Favorite> Favorites {get; set;}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

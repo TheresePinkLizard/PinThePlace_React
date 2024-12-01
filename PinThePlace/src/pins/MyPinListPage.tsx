@@ -4,11 +4,6 @@ import { Pin } from '../types/pin';
 import API_URL from '../apiConfig';
 import * as PinService from './PinService';
 
-//Tror denne trengs for å finne username
-/* interface PinListPageProps {
-    username: string; // Brukernavnet til den innloggede brukeren
-} */
-
 
 type MyPinListPageProps = {
     onCardClick: (lat: number, long: number, pinId: number) => void;
@@ -30,7 +25,7 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
         setLoading(true); // Set loading to true when starting the fetch
         setError(null);   // Clear any previous errors
         try {
-            const data = await PinService.fetchPins(); // Hent alle pins
+            const data = await PinService.fetchPins(); // Get all pins
             setPins(data);
             console.log(data);
         } catch (error) {
@@ -59,10 +54,10 @@ const PinListPage: React.FC<MyPinListPageProps>  =({ onCardClick, selectedCard, 
         }
     };
 
-    // Filtrér pins basert på brukernavn
+    // Filter pins based on username
     const userPins = pins.filter((pin) => pin.userName === username);
 
-    // Legg til søkefunksjonalitet
+    // Search function
     const filteredPins = searchQuery
         ? userPins.filter((pin) =>
               pin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

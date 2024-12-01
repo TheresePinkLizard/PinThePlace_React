@@ -17,12 +17,8 @@ namespace PinThePlace.Models
 
         public string UserId {get; set;} = string.Empty;
 
-
         public virtual User? User { get; set; }
 
         public virtual Pin? Pin { get; set; }
-
-
-
     }
 }

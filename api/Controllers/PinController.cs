@@ -220,16 +220,14 @@ public class PinController : Controller
         return View(pin);
     }
 
-    //  Http Get og post for å gjøre CRUD
-    //Get: It returns a view (the "Create" view) that contains a form where the user can enter details for creating the new item
     [HttpGet]
     [Authorize]
-    public IActionResult Create() // trigges når bruker navigerer til create siden
+    public IActionResult Create() 
     {
-        return View(); // returnerer view hvor bruker kan skrice inn detaljer for å lage et nytt item
+        return View(); 
     }
 
-// post:  is used to handle the submission of the form when the user clicks the "Create" button
+    // post:  is used to handle the submission of the form when the user clicks the "Create" button
     [HttpPost]
     [Authorize]   
     public async Task<IActionResult> Create(Pin pin)
@@ -242,7 +240,6 @@ public class PinController : Controller
 
             if (userName == null)
             {
-                // Håndter tilfelle der brukeren ikke er logget inn
                 return Unauthorized();
             }
             
@@ -281,18 +278,17 @@ public class PinController : Controller
         return View(pin);
     }
 
-    // kodene under gjør at update og delete fungerer
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> Update(int id)  // denne metoden viser utfyllingsskjemaet for å oppdatere en eksisterende item
-    {                                   // metoden slår ut når bruker navigerer seg til update siden
+    public async Task<IActionResult> Update(int id)  
+    {                                   
         // retrieves current user
         var userName = _userManager.GetUserName(User);
         
-        // henter fra database ved hjelp av id
+        // Get pin from the database based on pin id
         var pin = await _pinRepository.GetItemById(id); 
           
-        if (pin == null)               // sjekk om den finner item
+        if (pin == null)               
         {
             _logger.LogError("[PinController] Pin not found when updating the pin {PinId:0000}", id);
             return NotFound("Pin not found for the pinId");
@@ -311,10 +307,8 @@ public class PinController : Controller
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> Update(Pin pin)  // tar informasjonen som er skrevet i update skjema,
+    public async Task<IActionResult> Update(Pin pin)
     {   
-        
-                                               // ser hvis det er valid og oppdaterer i database
         if (ModelState.IsValid)
         {
             var file = pin.UploadedImage;
@@ -334,7 +328,7 @@ public class PinController : Controller
             bool returnOk = await _pinRepository.Update(pin);
             if(returnOk)
             {
-            return RedirectToAction(nameof(Table)); // displayer den oppdaterte listen
+            return RedirectToAction(nameof(Table));
             }
         }
         _logger.LogWarning("[PinController] Pin update failed {@pin}", pin);
@@ -343,13 +337,13 @@ public class PinController : Controller
 
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> Delete(int id)  // displayer confirmation page for å slette en item
+    public async Task<IActionResult> Delete(int id) 
     {
-          // retrieves current user
+        // retrieves current user
         var userName = _userManager.GetUserName(User);
-        var pin = await _pinRepository.GetItemById(id);  // identifiserer og henter item som skal bli slettet
+        var pin = await _pinRepository.GetItemById(id);  
          
-         if (pin == null)               // sjekk om den finner item
+         if (pin == null)           
         {   
             _logger.LogError("[PinController] Pin deleteion failed for {PinId:0000}", id);
             return NotFound("Pin not found for the PinId");
@@ -363,20 +357,20 @@ public class PinController : Controller
                 
             }
         }
-        return View(pin);   // hvis funnet, returnerer view med item data for bekreftelse
+        return View(pin);
     }
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> DeleteConfirmed(int id) // metoden som faktisk sletter item fra database
+    public async Task<IActionResult> DeleteConfirmed(int id) 
     {
-        bool returnOk = await _pinRepository.Delete(id);  // lagrer endringene 
+        bool returnOk = await _pinRepository.Delete(id);
         if (!returnOk)
         {
             _logger.LogError("[PinController] Pin deletion failed for {PinId:0000}", id);
             return BadRequest("Pin deletion failed");
         }
-        return RedirectToAction(nameof(Table)); //returnerer bruker til table view hvor item nå er fjernet
+        return RedirectToAction(nameof(Table));
     }
     
 }

@@ -105,7 +105,7 @@ type PinListPageProps = {
                                     <Card.Text><strong>Rating: {pin.rating}</strong></Card.Text>
                                     <Card.Text><strong>Date: </strong>
                                         {
-                                            new Date(pin.dateCreated).toISOString().split('.')[0].replace('T', ' ')
+                                            new Date(new Date(pin.dateCreated).getTime() + 60 * 60 * 1000).toISOString().split('.')[0].replace('T', ' ')
                                         }
                                     </Card.Text>
                                     <Card.Text><strong>Comment:</strong> {pin.comment}</Card.Text>

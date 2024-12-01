@@ -32,7 +32,7 @@ const PinForm: React.FC<PinFormProps> = ({
       setLongitude(initialData.longitude || 0);
     }
   }, [initialData]);
-  const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
+  //const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
   const [userId, setUserId] = useState<string>(sessionStorage.getItem('userId') || '');
   const [userName, setUserName] = useState<string>(sessionStorage.getItem('username') || '');
 
@@ -57,8 +57,8 @@ const PinForm: React.FC<PinFormProps> = ({
     if(uploadedImage) {
       formData.append('uploadedImage',uploadedImage);
     }
-    const dateCreated = new Date();
-    formData.append('dateCreated',dateCreated.toISOString());
+    //const dateCreated = new Date();
+    //formData.append('dateCreated',dateCreated.toISOString());
     formData.append('userId',userId);
     formData.append('userName',userName);
 

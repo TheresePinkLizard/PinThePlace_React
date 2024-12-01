@@ -112,7 +112,7 @@ type PinListPageProps = {
                                     <Card.Text><strong>UserName: </strong>{pin.userName}</Card.Text>
                                     <div className="d-flex justify-content-between">
                                     
-                                    {(username === "Admin" || pin.userName === username) && (
+                                    {(username === "Admin") && (
                                         <>
                                             <Button
                                                 href={`/pinupdate/${pin.pinId}?lat=${pin.latitude}&long=${pin.longitude}`}

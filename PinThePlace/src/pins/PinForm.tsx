@@ -32,7 +32,7 @@ const PinForm: React.FC<PinFormProps> = ({
       setLongitude(initialData.longitude || 0);
     }
   }, [initialData]);
-  //const [dateCreated, setDateCreated] = useState<Date>(initialData?.dateCreated || new Date());
+
   const [userId, setUserId] = useState<string>(sessionStorage.getItem('userId') || '');
   const [userName, setUserName] = useState<string>(sessionStorage.getItem('username') || '');
 
@@ -57,8 +57,6 @@ const PinForm: React.FC<PinFormProps> = ({
     if(uploadedImage) {
       formData.append('uploadedImage',uploadedImage);
     }
-    //const dateCreated = new Date();
-    //formData.append('dateCreated',dateCreated.toISOString());
     formData.append('userId',userId);
     formData.append('userName',userName);
 
@@ -100,7 +98,7 @@ const PinForm: React.FC<PinFormProps> = ({
           placeholder="Enter pin comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          maxLength={200} // Regular expression pattern
+          maxLength={200} // max length on comment
           title="The comment can only be 200 characters"
 
         />

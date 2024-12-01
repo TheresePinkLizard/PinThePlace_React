@@ -13,7 +13,7 @@ import FavoriteCreatePage from './Favorites/FavoriteCreatePage';
 import FavoriteUpdatePage from './Favorites/FavoriteUpdatePage';
 import React, { useState } from 'react';
 
-// Code to call homepage: <HomePage/>
+
 const App: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<any>(null);
   return (

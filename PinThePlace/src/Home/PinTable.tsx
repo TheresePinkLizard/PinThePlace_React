@@ -24,8 +24,6 @@ const PinTable: React.FC = () => {
     const [username, setUsername] = useState<string | null>(null);
     const [selectedCard, setSelectedCard] = useState(null); // to highlight selected cards
     
-
-  //const [content, setContent] = useState('Button 1');
   const [latLong, setLatLong] = useState({lat: null, long: null}); // to store lat and long
   
   // buttons to switch between feed and mypins
@@ -38,10 +36,9 @@ const PinTable: React.FC = () => {
         navigate('/login');
     };
 
- // const mapRef = useRef(null); // This creates a reference to the map div
+ // This creates a reference to the map div
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
-  //const navigate = useNavigate();
 
   // initialize the Leaflet map and its controls
   useEffect(() => {

@@ -1,4 +1,4 @@
-import API_URL from '../apiConfig'; // Update the path if necessary
+import API_URL from '../apiConfig'; 
 
 const headers = {
   'Content-Type': 'application/json',

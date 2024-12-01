@@ -16,10 +16,8 @@ const handleLogin = async (username, password) => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     } else {
-      // Get the response body
       const data = await response.json();
   
-      // Do something with the response
       console.log(data);
     }
   };

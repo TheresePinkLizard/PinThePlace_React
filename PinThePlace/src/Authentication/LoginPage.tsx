@@ -26,7 +26,7 @@ const LoginPage: React.FC = () => {
       navigate(-1);
     } catch (error) {
       console.error("There was an error", error);
-      setError('Feil brukernavn eller passord. Vennligst prøv igjen.');
+      setError('Wrong username or password. Please try again');
     }
   };
 
@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
         
         <p>Password: <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" /></p>
 
-        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Viser feilmelding */}
+        {error && <p style={{ color: 'red' }}>{error}</p>} {/* shows errormessage */}
         {loading && <p>Logger inn...</p>}
         <input type="submit" />
       </form>

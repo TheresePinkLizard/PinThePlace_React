@@ -9,8 +9,8 @@ namespace PinThePlace.DTOs
 
         [Required]
        [RegularExpression(@"^[0-9a-zA-ZæøåÆØÅ ]*$",ErrorMessage="You can only have numbers and letters in the name")]
-        public string Name { get; set; } = string.Empty; //  = string.Empty;  is to state this is a mandatory value, has empthy string by default. 
-                                        //can also use ? on nullable variabels instead, like this code shows
+        public string Name { get; set; } = string.Empty; 
+                                        
 
         [Required]
         [Range(1,5, ErrorMessage ="Rating must be between 1 and 5!")]

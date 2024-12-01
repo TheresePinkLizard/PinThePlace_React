@@ -186,12 +186,7 @@ public class PinController : Controller
         _logger = logger; 
     }
 
-    // async i metodene:
-    // gjør siden mer responsive. den lar programmet kjøre flere tasks concurrently uten å blokkere main thread.
-    // dette får siden til å virke mer responsiv ved å la andre oppgaver gå i forveien istedet for at alt venter på et program.
-    // await hører også til async
 
-    // en action som korresponderer til en brukers interaksjon, slik som å liste opp items når en url lastes
     public async Task<IActionResult> Table()
     {  
         var pins = await _pinRepository.GetAll();
@@ -227,14 +222,14 @@ public class PinController : Controller
         return View(); 
     }
 
-    // post:  is used to handle the submission of the form when the user clicks the "Create" button
+    
     [HttpPost]
     [Authorize]   
     public async Task<IActionResult> Create(Pin pin)
     {
         if (ModelState.IsValid)
         {
-            // Get the current user's ID
+            
             var userName = _userManager.GetUserName(User);
             var userId = _userManager.GetUserId(User);
 

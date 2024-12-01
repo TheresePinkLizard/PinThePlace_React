@@ -32,6 +32,8 @@ public class AccountController : ControllerBase
         _logger = logger;
     }
 
+    //Handles login and creates a token 
+
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto logindto)
     {

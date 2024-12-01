@@ -97,21 +97,21 @@ public class FavoriteAPIController : Controller
         {
             return BadRequest("Favorite data cannot be null");
         }
-        // Find the item in the database
+      
         var existingFavorite = await _pinRepository.GetFavoriteById(id);
         if (existingFavorite == null)
         {
             return NotFound("Favorite not found");
         }
-        // Update the item properties
+        
 
         existingFavorite.Category=favoriteDto.Category;
         
-        // Save the changes
+       
         bool updateSuccessful = await _pinRepository.UpdateFavorite(existingFavorite);
         if (updateSuccessful)
         {
-            return Ok(existingFavorite); // Return the updated item
+            return Ok(existingFavorite); 
         }
 
         _logger.LogWarning("[FavoriteAPIController] Favorite update failed {@favorite}", existingFavorite);

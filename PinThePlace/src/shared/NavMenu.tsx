@@ -13,10 +13,10 @@ const NavMenu: React.FC = () => {
     };
     
     useEffect(() => {
-              // Hent brukernavnet første gang komponenten rendres
+              // Get the username the first time it renders
               updateUsername();
 
-              // Legg til en lytter for endringer i sessionStorage
+              // Adding a listener for changes in sessionStorage 
               const handleStorageChange = (event: StorageEvent) => {
                   if (event.key === 'username') {
                       updateUsername();
@@ -25,7 +25,7 @@ const NavMenu: React.FC = () => {
       
               window.addEventListener('storage', handleStorageChange);
       
-              // Rydd opp lytteren når komponenten demonteres
+             
               return () => {
                   window.removeEventListener('storage', handleStorageChange);
               };
@@ -47,7 +47,7 @@ const NavMenu: React.FC = () => {
                 <Nav className="me-auto">
                     <Nav.Link href="/Table">Home</Nav.Link>
                     <Nav.Link href="/pins">Pins</Nav.Link>
-                    {username === 'Admin' && <Nav.Link href="/users">Users</Nav.Link>} {/* Kun for Admin */}
+                    {username === 'Admin' && <Nav.Link href="/users">Users</Nav.Link>} {/* Only for admin */}
                     <Nav.Link href="/HomePage">About</Nav.Link>
                     {!username && <Nav.Link href="/login">Login</Nav.Link>}
                     {username && <Nav.Link href="/logout">Logout</Nav.Link>}

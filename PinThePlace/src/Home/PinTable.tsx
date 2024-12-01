@@ -23,7 +23,7 @@ const PinTable: React.FC = () => {
     const [content, setContent] = useState('Button 1');
     const [username, setUsername] = useState<string | null>(null);
     const [selectedCard, setSelectedCard] = useState(null); // to highlight selected cards
-    //const [content, setContent] = useState('Button 1');
+    
 
   //const [content, setContent] = useState('Button 1');
   const [latLong, setLatLong] = useState({lat: null, long: null}); // to store lat and long

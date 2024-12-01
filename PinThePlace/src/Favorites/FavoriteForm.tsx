@@ -40,11 +40,11 @@ const FavoriteForm: React.FC<FavoriteFormProps> = ({
         };
  
 
-  //const [error, setError] = useState<string | null>(null);
+  
   const navigate = useNavigate();
 
   const onCancel = () => {
-    navigate(-1); // This will navigate back one step in the history
+    navigate(-1); 
   };
 
 

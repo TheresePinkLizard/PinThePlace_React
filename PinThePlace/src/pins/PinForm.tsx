@@ -62,8 +62,8 @@ const PinForm: React.FC<PinFormProps> = ({
     formData.append('userId',userId);
     formData.append('userName',userName);
 
-    //const pin: Pin = { pinId, name, rating, comment, imageUrl, latitude, longitude, uploadedImage, dateCreated, userId, userName};
-    onPinChanged(formData); // Call the passed function with the item data
+    
+    onPinChanged(formData); // Call the passed function with the pin data
   };
 
   return (

@@ -5,7 +5,7 @@ import { Pin } from '../types/pin';
 import {Favorite} from '../types/favorite';
 import API_URL from '../apiConfig';
 import { useLocation } from 'react-router-dom';
-// const API_URL = 'http://localhost:5043'
+
 
 import * as FavoriteService from './FavoriteService';
 

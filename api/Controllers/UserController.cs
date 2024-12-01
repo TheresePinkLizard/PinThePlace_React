@@ -34,10 +34,10 @@ public class UserAPIController : Controller
     public async Task<IActionResult> UserList()
     {
         try{
-        var users = await _pinDbContext.Users.Include(u => u.Pins) // Inkluder relasjonen til Pins
+        var users = await _pinDbContext.Users.Include(u => u.Pins) // Include relation to Pins
             .ToListAsync();
 
-            // Map brukere til DTO-er
+            // Create DTO
             var userDtos = users.Select(user => new UserDto
             {
             UserName = user.UserName,
@@ -56,7 +56,6 @@ public class UserAPIController : Controller
         }
     }
 }
-
 
 public class UserController : Controller
 {
@@ -108,8 +107,6 @@ public class UserController : Controller
                 _logger.LogWarning("[UserController] User not found in MyPins for UserId {UserId:0000}", userId);
                 return NotFound("User with was not found.");
             }
-
-            // Pass the pins to the view
             return View(user.Pins);
             }
             catch (Exception e){

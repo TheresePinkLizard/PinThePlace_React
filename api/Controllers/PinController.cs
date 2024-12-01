@@ -119,13 +119,13 @@ public class PinAPIController : Controller
         {
             return BadRequest("Pin data cannot be null");
         }
-        // Find the item in the database
+        // Find the pin in the database
         var existingPin = await _pinRepository.GetItemById(id);
         if (existingPin == null)
         {
             return NotFound("Pin not found");
         }
-        // Update the item properties
+        // Update the pin properties
         existingPin.Name = pinDto.Name;
         existingPin.Rating = pinDto.Rating;
         existingPin.Comment = pinDto.Comment;
@@ -140,7 +140,6 @@ public class PinAPIController : Controller
             existingPin.ImageUrl = "/images/"+pinDto.UploadedImage.FileName;
         }
 
-       // existingPin.ImageUrl = pinDto.ImageUrl;
         existingPin.DateCreated = pinDto.DateCreated;
         existingPin.Latitude = pinDto.Latitude;
         existingPin.Longitude = pinDto.Longitude;
@@ -152,7 +151,7 @@ public class PinAPIController : Controller
         bool updateSuccessful = await _pinRepository.Update(existingPin);
         if (updateSuccessful)
         {
-            return Ok(existingPin); // Return the updated item
+            return Ok(existingPin);
         }
 
         _logger.LogWarning("[PinAPIController] Pin update failed {@pin}", existingPin);
@@ -168,20 +167,14 @@ public class PinAPIController : Controller
             _logger.LogError("[PinAPIController] pin deletion failed for the PinId {PinId:0000}", id);
             return BadRequest("Pin deletion failed");
         }
-        return NoContent(); // 200 Ok is commonly used when the server returns a response body with additional information about the result of the request. For a DELETE operation, there's generally no need to return additional data, making 204 NoContent a better fit.
+        return NoContent();
     } 
-
-
-    
-
 }
-
-
 
 public class PinController : Controller
 {
 
-    private readonly IPinRepository _pinRepository; // deklarerer en privat kun lesbar felt for å lagre instanser av ItemDbContext
+    private readonly IPinRepository _pinRepository; 
     private readonly UserManager <User> _userManager;
     private readonly ILogger<PinController> _logger;
 
@@ -201,7 +194,6 @@ public class PinController : Controller
     // en action som korresponderer til en brukers interaksjon, slik som å liste opp items når en url lastes
     public async Task<IActionResult> Table()
     {  
-        // henter alle items fra items table i databasen og konverterer til en liste
         var pins = await _pinRepository.GetAll();
 
         if(!pins.Any())
@@ -211,18 +203,13 @@ public class PinController : Controller
         }
         var favorites = await _pinRepository.GetAllFavorites();
 
-
         var pinsViewModel = new PinsViewModel(pins,favorites, "Table");
-        // en action kan returnere enten: View, JSON, en Redirect, eller annet. 
-        // denne returnerer en view
-        //Console.WriteLine($"Fetched {pins.Count} pins from the database.");
+
         return View(pinsViewModel);
     }
 
     public async Task<IActionResult> Details(int id)
     {
-        //List<Pin> pins = await _pinDbContext.Pins.ToListAsync();
-        //var pin= pins.FirstOrDefault(i => i.PinId == id); // søker igjennom listen items til første som matcher id
         var pin = await _pinRepository.GetItemById(id);
 
         if (pin == null)
@@ -230,7 +217,7 @@ public class PinController : Controller
             _logger.LogError("[PinController] Pin not found for the PinId {PinId:0000}", id);
             return NotFound("Pin not found for the PinId");
             }
-        return View(pin); // returnerer view med et item
+        return View(pin);
     }
 
     //  Http Get og post for å gjøre CRUD
